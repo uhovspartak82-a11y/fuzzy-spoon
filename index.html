@@ -130,6 +130,46 @@ h1 .want { color: var(--accent); display: inline-block; transform: rotate(-3deg)
   .tile-photo { grid-row: auto; min-height: 380px; }
   .tile { min-height: 180px; }
 }
+
+/* Reviews: rating column on the left, three short quotes on the right */
+.reviews { padding-block: clamp(56px, 8vw, 104px); border-top: 1px solid var(--line); }
+.reviews .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: clamp(32px, 6vw, 88px); align-items: start; }
+.score { font-family: var(--font-display); font-size: clamp(5rem, 11vw, 8rem); line-height: .9; color: var(--accent); margin: 0; }
+.score-note { color: var(--muted); margin: 8px 0 28px; }
+.stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 24px; margin: 0 0 28px; }
+.stats div { display: grid; gap: 2px; }
+.stats dt { color: var(--muted); font-size: .9rem; }
+.stats dd { margin: 0; font-weight: 700; font-size: 1.3rem; font-variant-numeric: tabular-nums; }
+.link { color: var(--fg); font-weight: 700; text-underline-offset: 4px; text-decoration-color: var(--accent); }
+.link:hover { color: var(--accent); }
+.quotes { display: grid; gap: 36px; margin: 0; padding: 0; list-style: none; }
+.quotes blockquote { margin: 0 0 10px; font-size: clamp(1.15rem, 2vw, 1.4rem); line-height: 1.45; }
+.quotes figcaption { color: var(--muted); font-size: .92rem; }
+.quotes figcaption b { color: var(--fg); font-weight: 700; }
+.quotes figure { margin: 0; }
+
+/* Contacts: street sign photo next to the practical details */
+.contacts { padding-block: clamp(56px, 8vw, 104px); border-top: 1px solid var(--line); }
+.contacts .wrap { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(32px, 6vw, 80px); align-items: center; }
+.contacts-photo { margin: 0; min-width: 0; }
+.contacts-photo img { display: block; width: 100%; height: auto; max-height: 620px; object-fit: cover; border-radius: var(--radius); }
+.facts { display: grid; gap: 24px; margin: 0 0 32px; }
+.facts div { display: grid; gap: 4px; }
+.facts dt { color: var(--muted); font-size: .9rem; }
+.facts dd { margin: 0; font-size: 1.2rem; font-weight: 500; }
+.facts dd small { display: block; color: var(--muted); font-size: .92rem; font-weight: 400; }
+.age { margin: 24px 0 0; color: var(--muted); font-size: .92rem; }
+
+/* Footer */
+.footer { border-top: 1px solid var(--line); padding-block: 32px 40px; color: var(--muted); font-size: .9rem; }
+.footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 32px; }
+.footer .brand { color: var(--fg); font-size: 1.3rem; }
+.footer p { margin: 0; }
+
+@media (max-width: 860px) {
+  .reviews .wrap, .contacts .wrap { grid-template-columns: 1fr; }
+  .contacts-photo img { max-height: 420px; }
+}
 </style>
 </head>
 <body>
@@ -204,7 +244,60 @@ h1 .want { color: var(--accent); display: inline-block; transform: rotate(-3deg)
       </div>
     </div>
   </section>
+
+  <section class="reviews" id="reviews">
+    <div class="wrap">
+      <div>
+        <h2 class="section-title">Отзывы</h2>
+        <p class="score">4,9</p>
+        <p class="score-note">816 оценок и 418 отзывов на Яндекс Картах</p>
+        <dl class="stats">
+          <div><dt>Атмосфера</dt><dd>98%</dd></div>
+          <div><dt>Еда</dt><dd>97%</dd></div>
+          <div><dt>Персонал</dt><dd>92%</dd></div>
+          <div><dt>Кальян</dt><dd>91%</dd></div>
+        </dl>
+        <a class="link" href="https://yandex.ru/maps/?text=%D0%9A%D0%B0%D0%BB%D1%8C%D1%8F%D0%BD%20%D0%A5%D0%BE%D1%87%D1%83%2C%20%D0%BF%D0%B5%D1%80.%20%D0%91%D1%80%D0%B8%D0%BD%D1%8C%D0%BA%D0%BE%2C%202" target="_blank" rel="noopener">Все отзывы на Яндекс Картах</a>
+      </div>
+      <ul class="quotes">
+        <li><figure><blockquote>«Обслуживание на уровне, вкус и качество еды вообще кайфарик. Есть приставка, телевизоры, скучно точно не будет.»</blockquote><figcaption><b>Евгений К.</b>, 30 августа 2025</figcaption></figure></li>
+        <li><figure><blockquote>«Все супер! Позвонили, забронировали стол, пришли и сразу сели.»</blockquote><figcaption><b>Игорь Михайлович</b>, 26 декабря 2025</figcaption></figure></li>
+        <li><figure><blockquote>«Действительно хорошее место. Цены ниже, чем в некоторых других кальянках.»</blockquote><figcaption><b>Андрей</b>, 19 сентября 2025</figcaption></figure></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="contacts" id="contacts">
+    <div class="wrap">
+      <figure class="contacts-photo">
+        <img src="img/sign.webp" width="800" height="1067" loading="lazy" alt="Вывеска «Кальян хочу!» на фасаде дома">
+      </figure>
+      <div>
+        <h2 class="section-title">Как нас найти</h2>
+        <p class="section-note">Ищите на фасаде вывеску «Кальян хочу!».</p>
+        <dl class="facts">
+          <div><dt>Адрес</dt><dd>Санкт-Петербург, пер. Бринько, 2<small>Цокольный этаж</small></dd></div>
+          <div><dt>Часы работы</dt><dd>Каждый день с 12:00 до 06:00</dd></div>
+          <div><dt>Телефон и WhatsApp</dt><dd><a class="link" href="tel:+79818080088">+7 981 808-00-88</a></dd></div>
+        </dl>
+        <div class="ctas">
+          <a class="btn btn-primary" href="tel:+79818080088">Забронировать стол</a>
+          <a class="btn btn-ghost" href="https://yandex.ru/maps/?text=%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3%2C%20%D0%BF%D0%B5%D1%80.%20%D0%91%D1%80%D0%B8%D0%BD%D1%8C%D0%BA%D0%BE%2C%202" target="_blank" rel="noopener">Построить маршрут</a>
+          <a class="btn btn-ghost" href="https://wa.me/79818080088" target="_blank" rel="noopener">Написать в WhatsApp</a>
+        </div>
+        <p class="age">Кальяны подаём только гостям старше 18 лет. Возьмите с собой паспорт.</p>
+      </div>
+    </div>
+  </section>
 </main>
+
+<footer class="footer">
+  <div class="wrap">
+    <a class="brand" href="#top">Кальян хочу!</a>
+    <p>пер. Бринько, 2. Каждый день 12:00-06:00. +7 981 808-00-88</p>
+    <p>Курение вредит вашему здоровью. 18+</p>
+  </div>
+</footer>
 
 <script>
 (function () {
