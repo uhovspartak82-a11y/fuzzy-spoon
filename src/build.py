@@ -132,6 +132,54 @@ MENU_CSS = """
 @media (max-width: 700px) { .list { grid-template-columns: 1fr; } .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; } .card-body { flex-direction: column; gap: 4px; } }
 """
 
+GAMES_CSS = """
+/* Games: asymmetric bento. One large photo cell, two text cells stacked beside it */
+.games { padding-block: clamp(56px, 8vw, 104px); border-top: 1px solid var(--line); }
+.bento { display: grid; grid-template-columns: 2fr 1fr; grid-template-rows: 1fr 1fr; gap: 16px; min-height: 520px; }
+.tile { position: relative; min-width: 0; border-radius: var(--radius); overflow: hidden; padding: clamp(22px, 3vw, 32px); display: flex; flex-direction: column; justify-content: flex-end; gap: 8px; }
+.tile h3 { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.7rem, 3vw, 2.3rem); line-height: 1.05; margin: 0; }
+.tile p { margin: 0; color: var(--muted); max-width: 40ch; }
+.tile-photo { grid-row: span 2; }
+.tile-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 35%; }
+.tile-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgb(21 20 22 / .92) 0%, rgb(21 20 22 / .55) 30%, rgb(21 20 22 / 0) 60%); }
+.tile-photo > div { position: relative; z-index: 1; display: grid; gap: 8px; }
+.tile-photo p { color: var(--fg); opacity: .85; }
+.tile-board { background: var(--surface); }
+.tile-sport { background: var(--accent); color: var(--accent-ink); }
+.tile-sport p { color: var(--accent-ink); opacity: .8; }
+@media (max-width: 760px) {
+  .bento { grid-template-columns: 1fr; grid-template-rows: none; min-height: 0; }
+  .tile-photo { grid-row: auto; min-height: 380px; }
+  .tile { min-height: 180px; }
+}
+"""
+
+GAMES_HTML = """
+  <section class="games" id="games">
+    <div class="wrap">
+      <h2 class="section-title">Не только кальян</h2>
+      <p class="section-note">Приходите компанией: есть чем заняться до шести утра.</p>
+      <div class="bento">
+        <article class="tile tile-photo">
+          <img src="img/games-console.webp" width="900" height="1209" loading="lazy" alt="Кальян у экрана с файтингом на игровой приставке">
+          <div>
+            <h3>Игровые приставки</h3>
+            <p>Большие экраны и джойстики на компанию. Файтинги, гонки и всё для вечера с друзьями.</p>
+          </div>
+        </article>
+        <article class="tile tile-board">
+          <h3>Настольные игры</h3>
+          <p>Попросите у официанта, принесём к столу.</p>
+        </article>
+        <article class="tile tile-sport">
+          <h3>Спорт на проекторе</h3>
+          <p>Смотрим важные матчи вместе. Про трансляцию лучше спросить заранее.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+"""
+
 TABS_JS = """
 <script>
 (function () {
@@ -207,8 +255,8 @@ def menu_html():
 
 def main():
     page = (SRC / "hero.html").read_text(encoding="utf-8")
-    page = page.replace("</style>", MENU_CSS + "</style>", 1)
-    page = page.replace("</main>", menu_html() + "</main>\n" + TABS_JS, 1)
+    page = page.replace("</style>", MENU_CSS + GAMES_CSS + "</style>", 1)
+    page = page.replace("</main>", menu_html() + GAMES_HTML + "</main>\n" + TABS_JS, 1)
     (SRC / "preview.html").write_text(page, encoding="utf-8")
     head, body = page.split("</style>", 1)
     full = (
