@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Афрасиаб</title>
+<meta name="description" content="Кафе-ресторан «Афрасиаб» в Петербурге: Мытнинская ул., 11. Узбекская кухня по традиционным рецептам, открыто круглосуточно.">
+<meta name="theme-color" content="#16307a">
+<link rel="preload" href="fonts/forum-cyrillic-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+/* Self-hosted fonts (Fontsource, OFL) */
+@font-face { font-family: "Forum"; font-weight: 400; font-display: swap; src: url(fonts/forum-cyrillic-400-normal.woff2) format("woff2"); unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116; }
+@font-face { font-family: "Forum"; font-weight: 400; font-display: swap; src: url(fonts/forum-latin-400-normal.woff2) format("woff2"); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2212,U+FEFF; }
+@font-face { font-family: "Golos Text"; font-weight: 400; font-display: swap; src: url(fonts/golos-text-cyrillic-400-normal.woff2) format("woff2"); unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116; }
+@font-face { font-family: "Golos Text"; font-weight: 400; font-display: swap; src: url(fonts/golos-text-latin-400-normal.woff2) format("woff2"); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+20BD,U+2122,U+2212,U+FEFF; }
+@font-face { font-family: "Golos Text"; font-weight: 500; font-display: swap; src: url(fonts/golos-text-cyrillic-500-normal.woff2) format("woff2"); unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116; }
+@font-face { font-family: "Golos Text"; font-weight: 500; font-display: swap; src: url(fonts/golos-text-latin-500-normal.woff2) format("woff2"); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+20BD,U+2122,U+2212,U+FEFF; }
+@font-face { font-family: "Golos Text"; font-weight: 600; font-display: swap; src: url(fonts/golos-text-cyrillic-600-normal.woff2) format("woff2"); unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116; }
+@font-face { font-family: "Golos Text"; font-weight: 600; font-display: swap; src: url(fonts/golos-text-latin-600-normal.woff2) format("woff2"); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+20BD,U+2122,U+2212,U+FEFF; }
+
+:root {
+  --lapis: #1b3a8c;
+  --lapis-deep: #10255f;
+  --lapis-night: #0b1a45;
+  --ochre-red: #982f1d;
+  --ochre-red-deep: #8e3220;
+  --ochre: #e2a83f;
+  --ochre-light: #f0c46a;
+  --plaster: #ece1c8;
+  --plaster-dim: #c9bfa7;
+  --carbon: #1c1310;
+  --on-lapis: #f3ead6;
+  --on-lapis-soft: #c4cdea;
+  --on-red: #fbeee0;
+  --on-red-soft: #f8ddcc;
+  --display: "Forum", Georgia, serif;
+  --body: "Golos Text", system-ui, sans-serif;
+  --gutter: clamp(16px, 4vw, 56px);
+  --ease-out: cubic-bezier(.16, 1, .3, 1);
+}
+
+* { box-sizing: border-box; }
+html { scrollbar-color: var(--ochre) var(--lapis-night); -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--lapis);
+  color: var(--on-lapis);
+  font: 400 1.0625rem/1.55 var(--body);
+  overflow-x: hidden;
+}
+::selection { background: var(--ochre); color: var(--carbon); }
+a { color: inherit; text-underline-offset: .22em; text-decoration-thickness: 1px; }
+:focus-visible { outline: 2px solid var(--ochre-light); outline-offset: 3px; border-radius: 2px; }
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--lapis-night); }
+::-webkit-scrollbar-thumb { background: var(--ochre); border-radius: 5px; border: 2px solid var(--lapis-night); }
+
+/* The wall: lapis pigment, unevenly laid, with lime showing through */
+.wall {
+  position: relative;
+  isolation: isolate;
+  background:
+    radial-gradient(120% 80% at 15% 10%, #2348a3 0%, transparent 55%),
+    radial-gradient(90% 70% at 85% 90%, #132c6e 0%, transparent 60%),
+    var(--lapis);
+}
+.wall::before {
+  content: "";
+  position: absolute; inset: 0; z-index: -1;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .93 0 0 0 0 .89 0 0 0 0 .8 0 0 0 1.6 -1.05'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: .16;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+/* Sogdian pearl-roundel border */
+.pearls {
+  height: 18px;
+  background:
+    radial-gradient(circle at 9px 9px, var(--plaster) 0 4.2px, transparent 4.8px) 0 0 / 18px 18px repeat-x,
+    var(--ochre-red-deep);
+  border-block: 2px solid var(--carbon);
+}
+
+/* Band with navigation */
+.band {
+  position: relative; z-index: 2;
+  background: var(--lapis-night);
+}
+.band-inner {
+  display: flex; align-items: center; justify-content: space-between; gap: 24px;
+  padding: 14px var(--gutter);
+}
+.mark {
+  font: 400 1.35rem/1 var(--display);
+  letter-spacing: .16em;
+  text-decoration: none;
+  color: var(--on-lapis);
+}
+.nav { display: flex; align-items: center; gap: clamp(16px, 2.6vw, 36px); }
+.nav a { text-decoration: none; font-weight: 500; font-size: .98rem; color: var(--on-lapis-soft); transition: color .2s; }
+.nav a:hover { color: var(--ochre-light); }
+.nav .nav-phone { color: var(--on-lapis); font-variant-numeric: tabular-nums; display: inline-flex; align-items: center; gap: 8px; }
+.nav .nav-phone svg { width: 17px; height: 17px; flex: none; }
+
+/* First viewport */
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(320px, 1fr);
+  align-items: center;
+  gap: clamp(24px, 4vw, 64px);
+  padding: clamp(40px, 7vh, 88px) var(--gutter) clamp(56px, 8vh, 96px);
+  min-height: min(68vh, 640px);
+}
+.inscription h1 {
+  margin: 0;
+  font: 400 clamp(3.1rem, 8.6vw, 6rem)/.95 var(--display);
+  letter-spacing: .09em;
+  color: var(--on-lapis);
+  text-shadow: 0 2px 0 rgba(11, 26, 69, .55);
+}
+.inscription .rule {
+  display: block;
+  width: min(100%, 34rem);
+  height: 10px;
+  margin: 22px 0 26px;
+  background:
+    radial-gradient(circle at 5px 5px, var(--ochre) 0 3px, transparent 3.5px) 0 0 / 15px 10px repeat-x;
+}
+.inscription .lede {
+  margin: 0;
+  max-width: 30ch;
+  font: 400 clamp(1.4rem, 2.4vw, 1.95rem)/1.25 var(--display);
+  color: var(--on-lapis);
+  text-wrap: balance;
+}
+.inscription .sub {
+  margin: 18px 0 0;
+  max-width: 46ch;
+  color: var(--on-lapis-soft);
+  font-size: 1rem;
+}
+
+/* Fragments: pigment on a plaster rim, edges broken off */
+.fragment {
+  position: relative;
+  background: var(--plaster-dim);
+  padding: 7px;
+  filter: drop-shadow(0 18px 24px rgba(6, 14, 40, .45)) drop-shadow(0 3px 4px rgba(6, 14, 40, .3));
+}
+.fragment > .pigment { position: relative; overflow: hidden; }
+.fragment > .pigment::after {
+  /* the restorer's reveal: lime wash cleared off once, left to right */
+  content: "";
+  position: absolute; inset: 0;
+  background: var(--plaster);
+  pointer-events: none;
+  clip-path: inset(0 0 0 100%);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .fragment > .pigment::after { animation: clean 1.5s var(--ease-out) .35s backwards; }
+  .frieze .fragment:nth-child(2) > .pigment::after { animation-delay: .7s; }
+  .frieze .fragment:nth-child(3) > .pigment::after { animation-delay: .85s; }
+  .frieze .fragment:nth-child(1) > .pigment::after { animation-delay: .55s; }
+}
+@keyframes clean {
+  from { clip-path: inset(0 0 0 0); }
+  to   { clip-path: inset(0 0 0 100%); }
+}
+
+.visit {
+  transform: rotate(-2.2deg);
+  clip-path: polygon(0 3%, 7% 0, 38% 1.2%, 41% 0, 100% 0.6%, 99.2% 22%, 100% 47%, 98.6% 52%, 99.6% 100%, 62% 98.8%, 57% 100%, 12% 99%, 0 100%, 1.2% 71%, 0 66%, 0.8% 30%);
+}
+.visit > .pigment {
+  background:
+    radial-gradient(110% 80% at 80% 0%, #a63a24 0%, transparent 60%),
+    var(--ochre-red);
+  color: var(--on-red);
+  padding: clamp(24px, 3vw, 38px);
+  clip-path: polygon(0 2%, 9% 0, 100% 0.8%, 99.4% 40%, 100% 100%, 54% 99.2%, 0 100%, 0.6% 58%);
+}
+.open-now {
+  display: flex; align-items: center; gap: 10px;
+  margin: 0;
+  font-weight: 600; font-size: .95rem; letter-spacing: .02em;
+  color: #f8d996;
+}
+.open-now::before {
+  content: ""; width: 9px; height: 9px; border-radius: 50%;
+  background: var(--ochre-light);
+  box-shadow: 0 0 0 4px rgba(240, 196, 106, .22);
+}
+.visit h2 {
+  margin: 10px 0 0;
+  font: 400 clamp(1.7rem, 2.6vw, 2.2rem)/1.1 var(--display);
+}
+.facts { list-style: none; margin: 22px 0 0; padding: 0; display: grid; gap: 12px; }
+.facts li { display: flex; align-items: flex-start; gap: 12px; color: var(--on-red-soft); }
+.facts li strong { color: var(--on-red); font-weight: 600; }
+.facts svg { width: 20px; height: 20px; flex: none; margin-top: 2px; color: var(--ochre-light); }
+.actions { margin-top: 28px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px 22px; }
+.btn-call {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 15px 26px;
+  background: var(--ochre);
+  color: var(--carbon);
+  font: 600 1.08rem/1 var(--body);
+  text-decoration: none;
+  border-radius: 3px;
+  box-shadow: 0 6px 14px rgba(40, 10, 4, .35), inset 0 -3px 0 rgba(0, 0, 0, .14);
+  transition: transform .25s var(--ease-out), box-shadow .25s var(--ease-out), background .2s;
+}
+.btn-call svg { width: 19px; height: 19px; }
+.btn-call:hover { background: var(--ochre-light); transform: translateY(-2px); box-shadow: 0 10px 20px rgba(40, 10, 4, .4), inset 0 -3px 0 rgba(0, 0, 0, .14); }
+.btn-call:active { transform: translateY(0); }
+.link-route { font-weight: 600; color: var(--on-red); display: inline-flex; align-items: center; gap: 8px; }
+.link-route svg { width: 18px; height: 18px; }
+.second-phone { margin: 16px 0 0; font-size: .92rem; color: var(--on-red-soft); font-variant-numeric: tabular-nums; }
+.second-phone a { color: var(--on-red); }
+
+/* Start of the menu: a frieze of dish fragments */
+.menu-start { padding: 0 var(--gutter) clamp(56px, 8vw, 104px); }
+.menu-start h2 {
+  margin: 0 0 30px;
+  font: 400 clamp(2rem, 4vw, 3rem)/1.05 var(--display);
+  letter-spacing: .06em;
+}
+.frieze { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(18px, 2.4vw, 32px); align-items: start; }
+.frieze .fragment:nth-child(1) { transform: rotate(1.1deg); clip-path: polygon(0 0, 100% 1.5%, 99% 100%, 30% 99%, 26% 100%, 0 98%); }
+.frieze .fragment:nth-child(2) { transform: rotate(-.8deg) translateY(18px); clip-path: polygon(2% 0, 64% 1%, 70% 0, 100% 2%, 100% 97%, 0 100%, 0.8% 46%); }
+.frieze .fragment:nth-child(3) { transform: rotate(1.6deg); clip-path: polygon(0 1%, 100% 0, 99% 61%, 100% 100%, 8% 99%, 0 100%); }
+.dish > .pigment { padding: 22px 22px 24px; color: var(--carbon); }
+.frieze .fragment:nth-child(1) .pigment { background: var(--ochre); }
+.frieze .fragment:nth-child(2) .pigment { background: var(--plaster); }
+.frieze .fragment:nth-child(3) .pigment { background: var(--ochre-light); }
+.dish svg.motif { display: block; width: 92px; height: 72px; margin-bottom: 14px; color: var(--carbon); }
+.dish h3 { margin: 0; font: 400 1.55rem/1.1 var(--display); }
+.dish p { margin: 6px 0 0; font-size: .95rem; color: #4a3528; }
+.dish .price { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-top: 16px; padding-top: 12px; border-top: 1px solid rgba(28, 19, 16, .28); font-variant-numeric: tabular-nums; }
+.dish .price b { font: 600 1.3rem/1 var(--body); }
+.dish .price span { font-size: .9rem; color: #4a3528; }
+
+/* Tablet and phone */
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; min-height: 0; padding-top: 36px; }
+  .visit { transform: rotate(-1.2deg); max-width: 560px; }
+  .frieze { grid-template-columns: 1fr; max-width: 560px; }
+  .frieze .fragment:nth-child(2) { transform: rotate(-.8deg); }
+}
+@media (max-width: 640px) {
+  .nav .nav-link { display: none; }
+  .mark { font-size: 1.1rem; letter-spacing: .12em; }
+  .inscription h1 { letter-spacing: .05em; }
+  .inscription .rule { margin: 16px 0 18px; }
+  .btn-call { width: 100%; justify-content: center; padding-block: 17px; }
+}
+@media (max-width: 380px) {
+  .inscription h1 { font-size: 2.75rem; }
+}
+</style>
+</head>
+<body>
+<div class="wall">
+  <header class="band">
+    <div class="pearls" aria-hidden="true"></div>
+    <div class="band-inner">
+      <a class="mark" href="#top">АФРАСИАБ</a>
+      <nav class="nav" aria-label="Разделы">
+        <a class="nav-link" href="#menu">Меню</a>
+        <a class="nav-link" href="#visit">Как добраться</a>
+        <a class="nav-phone" href="tel:+79692210555">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h3.5l1.8 4.6-2.3 1.5a12 12 0 0 0 6.9 6.9l1.5-2.3L21 15.5V19a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>
+          +7 (969) 221-05-55
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="name">
+      <div class="inscription">
+        <h1 id="name">АФРАСИАБ</h1>
+        <span class="rule" aria-hidden="true"></span>
+        <p class="lede">Восточная кухня по&nbsp;традиционным рецептам</p>
+        <p class="sub">Кафе-ресторан на Мытнинской. Плов, манты и&nbsp;самса в&nbsp;любое время дня и&nbsp;ночи.</p>
+      </div>
+
+      <div class="fragment visit" id="visit">
+        <div class="pigment">
+          <p class="open-now">Открыто сейчас</p>
+          <h2>Круглосуточно, без&nbsp;выходных</h2>
+          <ul class="facts">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+              <span><strong>Мытнинская ул., 11</strong><br>Санкт-Петербург</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.86l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg>
+              <span><strong>5,0</strong> на&nbsp;картах, 676 оценок</span>
+            </li>
+          </ul>
+          <div class="actions">
+            <a class="btn-call" href="tel:+79692210555">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h3.5l1.8 4.6-2.3 1.5a12 12 0 0 0 6.9 6.9l1.5-2.3L21 15.5V19a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>
+              Позвонить
+            </a>
+            <a class="link-route" href="https://yandex.ru/maps/2/saint-petersburg/?text=%D0%90%D1%84%D1%80%D0%B0%D1%81%D0%B8%D0%B0%D0%B1%2C%20%D0%9C%D1%8B%D1%82%D0%BD%D0%B8%D0%BD%D1%81%D0%BA%D0%B0%D1%8F%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%2C%2011" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l18-8-8 18-2-8z"/></svg>
+              Построить маршрут
+            </a>
+          </div>
+          <p class="second-phone">Второй номер: <a href="tel:+79214395073">+7 (921) 439-50-73</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="menu-start" id="menu" aria-labelledby="menu-title">
+      <h2 id="menu-title">Из меню</h2>
+      <div class="frieze">
+        <article class="fragment dish">
+          <div class="pigment">
+            <svg class="motif" viewBox="0 0 92 72" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <ellipse cx="46" cy="52" rx="40" ry="12"/>
+              <path d="M14 50c4-20 18-30 32-30s28 10 32 30"/>
+              <path d="M28 40c3-4 6-5 9-5M50 30c4 0 7 2 9 5M38 46c2-3 5-4 8-4M60 44c2-2 4-3 7-3"/>
+              <path d="M44 20c-2-6 0-10 4-13M52 21c1-5 4-8 8-9"/>
+            </svg>
+            <h3>Ташкентский плов</h3>
+                        <div class="price"><b>595 ₽</b><span>420 г</span></div>
+          </div>
+        </article>
+        <article class="fragment dish">
+          <div class="pigment">
+            <svg class="motif" viewBox="0 0 92 72" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M10 58h72"/>
+              <path d="M16 58c-2-10 4-18 13-18s15 8 13 18"/>
+              <path d="M50 58c-2-10 4-18 13-18s15 8 13 18"/>
+              <path d="M33 40c-2-12 4-22 13-22s15 10 13 22"/>
+              <path d="M29 40c-2-4 0-7 0-7M63 40c2-4 0-7 0-7M46 18c-1-4 1-7 1-7"/>
+            </svg>
+            <h3>Манты</h3>
+            <p>5 штук</p>
+            <div class="price"><b>615 ₽</b><span>400 г</span></div>
+          </div>
+        </article>
+        <article class="fragment dish">
+          <div class="pigment">
+            <svg class="motif" viewBox="0 0 92 72" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 56L46 12l34 44z"/>
+              <path d="M24 40l22 4 22-4M33 28l13 3 13-3"/>
+              <circle cx="40" cy="50" r="1.4" fill="currentColor"/><circle cx="52" cy="50" r="1.4" fill="currentColor"/><circle cx="46" cy="37" r="1.4" fill="currentColor"/>
+            </svg>
+            <h3>Самса из&nbsp;говядины</h3>
+                        <div class="price"><b>220 ₽</b><span>200 г</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+</div>
+</body>
+</html>
