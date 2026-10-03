@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Афрасиаб</title>
 <meta name="description" content="Кафе-ресторан «Афрасиаб» в Петербурге: Мытнинская ул., 11. Узбекская кухня по традиционным рецептам, открыто круглосуточно.">
-<meta name="theme-color" content="#16307a">
+<meta name="theme-color" content="#0b1a45">
 <link rel="preload" href="fonts/forum-cyrillic-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <style>
 /* Self-hosted fonts (Fontsource, OFL) */
@@ -43,7 +43,7 @@
 html { scrollbar-color: var(--ochre) var(--lapis-night); -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;
-  background: var(--lapis);
+  background: #0a1747;
   color: var(--on-lapis);
   font: 400 1.0625rem/1.55 var(--body);
   overflow-x: clip;
@@ -57,19 +57,22 @@ a { color: inherit; text-underline-offset: .22em; text-decoration-thickness: 1px
 ::-webkit-scrollbar-thumb { background: var(--ochre); border-radius: 5px; border: 2px solid var(--lapis-night); }
 
 /* The wall: lapis pigment, unevenly laid, with lime showing through */
+/* Night Samarkand: deep night blue with a faint gold girih lattice */
 .wall {
   position: relative;
   isolation: isolate;
   background:
-    radial-gradient(120% 80% at 15% 10%, #2348a3 0%, transparent 55%),
-    radial-gradient(90% 70% at 85% 90%, #132c6e 0%, transparent 60%),
-    var(--lapis);
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cpath d='M59.9 24.8 L-59.9 24.8 L24.8 -59.9 L24.8 59.9 L-59.9 -24.8 L59.9 -24.8 L-24.8 59.9 L-24.8 -59.9ZM179.9 24.8 L60.1 24.8 L144.8 -59.9 L144.8 59.9 L60.1 -24.8 L179.9 -24.8 L95.2 59.9 L95.2 -59.9ZM59.9 144.8 L-59.9 144.8 L24.8 60.1 L24.8 179.9 L-59.9 95.2 L59.9 95.2 L-24.8 179.9 L-24.8 60.1ZM179.9 144.8 L60.1 144.8 L144.8 60.1 L144.8 179.9 L60.1 95.2 L179.9 95.2 L95.2 179.9 L95.2 60.1ZM84.0 60.0 L60.0 84.0 L36.0 60.0 L60.0 36.0ZM77.0 77.0 L43.0 77.0 L43.0 43.0 L77.0 43.0Z' fill='none' stroke='%23e2a83f' stroke-opacity='.10' stroke-width='1'/%3E%3C/svg%3E") 0 0 / 150px 150px,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='420'%3E%3Cg fill='%23f0c46a' fill-opacity='.55'%3E%3Cpath d='M191 228L192.2 232.7L197 234L192.2 235.1L191 240L189.8 235.1L185 234L189.8 232.7Z'/%3E%3Cpath d='M191 347L191.7 351.0L196 352L191.7 353.0L191 357L189.7 353.0L186 352L189.7 351.0Z'/%3E%3Cpath d='M84 207L85.5 213.2L92 215L85.5 216.4L84 223L82.3 216.4L76 215L82.3 213.2Z'/%3E%3Cpath d='M256 78L256.8 83.3L262 84L256.8 85.7L256 90L254.4 85.7L250 84L254.4 83.3Z'/%3E%3Cpath d='M131 38L133.0 44.7L139 46L133.0 47.9L131 54L129.8 47.9L123 46L129.8 44.7Z'/%3E%3Cpath d='M264 242L265.0 247.0L270 248L265.0 249.4L264 254L262.6 249.4L258 248L262.6 247.0Z'/%3E%3Cpath d='M396 264L397.5 270.0L404 272L397.5 273.2L396 280L394.3 273.2L388 272L394.3 270.0Z'/%3E%3Cpath d='M270 251L271.6 257.7L278 259L271.6 260.9L270 267L268.4 260.9L262 259L268.4 257.7Z'/%3E%3Cpath d='M35 19L36.3 23.3L40 24L36.3 25.3L35 29L34.3 25.3L30 24L34.3 23.3Z'/%3E%3C/g%3E%3C/svg%3E") 0 0 / 420px 420px,
+    radial-gradient(55% 35% at 75% 0%, rgba(240, 196, 106, .16) 0%, transparent 70%),
+    radial-gradient(100% 60% at 8% 10%, #142c70 0%, transparent 60%),
+    linear-gradient(180deg, #0c1d55 0%, #0a1747 50%, #08123a 100%);
 }
 .wall::before {
   content: "";
   position: absolute; inset: 0; z-index: -1;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .93 0 0 0 0 .89 0 0 0 0 .8 0 0 0 1.6 -1.05'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  opacity: .16;
+  opacity: .06;
   mix-blend-mode: screen;
   pointer-events: none;
 }
@@ -410,6 +413,7 @@ figure.shot, figure.facade { margin: 0; }
   .inside-wall { grid-template-columns: 1fr; }
   .shot img { aspect-ratio: 4 / 3; }
 }
+
 </style>
 </head>
 <body>
