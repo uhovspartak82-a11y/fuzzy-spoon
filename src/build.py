@@ -333,7 +333,11 @@ def meta(weight, note):
 
 def menu_html():
     tabs, panels = [], []
+    n = 0  # every non-hookah item has a generated photo img/menu/gen/dNN.webp, numbered in MENU order
     for key, title, items in MENU:
+        if key != "hookah":
+            items = [(name, w, p, f"gen/d{n + i:02d}", note) for i, (name, w, p, _, note) in enumerate(items)]
+            n += len(items)
         tabs.append(f'<button class="tab" role="tab" type="button" data-target="m-{key}" aria-controls="m-{key}">{escape(title)}</button>')
         cards = [i for i in items if i[3]]
         rest = [i for i in items if not i[3]]
