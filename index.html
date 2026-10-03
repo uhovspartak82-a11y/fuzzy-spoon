@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Афрасиаб — восточная кухня на Римского-Корсакова</title>
+  <meta name="description" content="Кафе «Афрасиаб» в Санкт-Петербурге: ташкентский и самаркандский плов, лагман, манты, самса. Проспект Римского-Корсакова, 12. Работаем круглосуточно.">
+  <meta property="og:title" content="Афрасиаб — восточная кухня">
+  <meta property="og:description" content="Плов, лагман, манты, самса. Санкт-Петербург, пр. Римского-Корсакова, 12.">
+  <meta property="og:image" content="images/hero.jpg">
+  <meta name="theme-color" content="#14213d">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2314213d'/%3E%3Cpath d='M32 10l6 14 14 6-14 6-6 14-6-14-14-6 14-6z' fill='%233fb8af'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Афрасиаб",
+    "servesCuisine": ["Узбекская", "Восточная"],
+    "telephone": "+7 969 221-05-55",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "проспект Римского-Корсакова, 12",
+      "addressLocality": "Санкт-Петербург",
+      "addressCountry": "RU"
+    },
+    "openingHours": "Mo-Su 00:00-24:00",
+    "sameAs": ["https://vk.ru/afrasiab.cafe"],
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.6", "ratingCount": "924" }
+  }
+  </script>
+</head>
+<body>
+
+<header class="nav" id="top">
+  <div class="wrap nav__inner">
+    <a href="#top" class="logo" aria-label="Афрасиаб — на главную">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 3l4.5 10.5L35 18l-10.5 4.5L20 33l-4.5-10.5L5 18l10.5-4.5z"/></svg>
+      <span>Афрасиаб</span>
+    </a>
+    <nav class="nav__links" aria-label="Разделы">
+      <a href="#menu">Меню</a>
+      <a href="#about">О нас</a>
+      <a href="#gallery">Фото</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <a class="btn btn--small" href="tel:+79692210555">Забронировать</a>
+    <button class="burger" aria-label="Открыть меню" aria-expanded="false"><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__media" aria-hidden="true">
+      <img src="images/hero.jpg" alt="" onerror="this.remove()">
+    </div>
+    <div class="wrap hero__inner">
+      <p class="eyebrow">Кафе-ресторан · Санкт-Петербург</p>
+      <h1>Афрасиаб</h1>
+      <p class="hero__lead">Аутентичная восточная кухня: ташкентский и самаркандский плов, лагман, сочные манты, самса и чебуреки.</p>
+      <div class="hero__actions">
+        <a class="btn" href="#menu">Смотреть меню</a>
+        <a class="btn btn--ghost" href="tel:+79692210555">+7 (969) 221-05-55</a>
+      </div>
+      <ul class="hero__facts">
+        <li><b>4,6</b><span>★★★★★</span><small>924 оценки на Яндексе</small></li>
+        <li><b>24/7</b><small>круглосуточно, без выходных</small></li>
+        <li><b>Римского-Корсакова, 12</b><small>1 этаж</small></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section class="section" id="menu">
+    <div class="wrap">
+      <div class="section__head">
+        <p class="eyebrow">Меню</p>
+        <h2>Что готовим</h2>
+        <p class="muted">Цены актуальны на 27 сентября. Полное меню — у официанта или по телефону.</p>
+      </div>
+
+      <div class="tabs" role="tablist">
+        <button class="tab is-active" role="tab" data-filter="all" aria-selected="true">Всё</button>
+        <button class="tab" role="tab" data-filter="hot" aria-selected="false">Горячее</button>
+        <button class="tab" role="tab" data-filter="soup" aria-selected="false">Супы</button>
+        <button class="tab" role="tab" data-filter="bake" aria-selected="false">Выпечка</button>
+        <button class="tab" role="tab" data-filter="salad" aria-selected="false">Салаты и закуски</button>
+      </div>
+
+      <div class="menu-grid" id="menu-grid"><!-- заполняется из script.js --></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section section--dark" id="about">
+    <div class="wrap about">
+      <div class="about__text">
+        <p class="eyebrow">О месте</p>
+        <h2>Самарканд — на Римского-Корсакова</h2>
+        <p>Афрасиаб — древнее городище, из которого вырос Самарканд. Мы назвали кафе в его честь, потому что готовим так, как готовят там: плов из казана, сочные манты и хонум в домашнем тесте, горячая самса с хрустящей корочкой.</p>
+        <p>Приходите на обед, на ужин с семьёй или большой компанией — накормим щедро и по-домашнему.</p>
+      </div>
+      <ul class="features">
+        <li><span class="features__icon">◆</span><div><b>Плов из казана</b><small>Ташкентский и самаркандский</small></div></li>
+        <li><span class="features__icon">◆</span><div><b>Домашнее тесто</b><small>Манты, хонум, лагман, чебуреки</small></div></li>
+        <li><span class="features__icon">◆</span><div><b>Для компаний</b><small>Семейные ужины и праздники</small></div></li>
+        <li><span class="features__icon">◆</span><div><b>В центре города</b><small>Исторический центр Петербурга</small></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section" id="gallery">
+    <div class="wrap">
+      <div class="section__head">
+        <p class="eyebrow">Фото</p>
+        <h2>Атмосфера</h2>
+      </div>
+      <div class="gallery">
+        <figure class="g g--tall"><img src="images/gallery/1.jpg" alt="Зал кафе Афрасиаб" loading="lazy" onerror="this.remove()"></figure>
+        <figure class="g"><img src="images/gallery/2.jpg" alt="Плов в казане" loading="lazy" onerror="this.remove()"></figure>
+        <figure class="g"><img src="images/gallery/3.jpg" alt="Подача блюд" loading="lazy" onerror="this.remove()"></figure>
+        <figure class="g g--wide"><img src="images/gallery/4.jpg" alt="Интерьер" loading="lazy" onerror="this.remove()"></figure>
+        <figure class="g"><img src="images/gallery/5.jpg" alt="Выпечка" loading="lazy" onerror="this.remove()"></figure>
+        <figure class="g"><img src="images/gallery/6.jpg" alt="Чай и сладости" loading="lazy" onerror="this.remove()"></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="section section--tint" id="reviews">
+    <div class="wrap reviews">
+      <div class="reviews__score">
+        <b>4,6</b>
+        <span class="stars" aria-label="4,6 из 5">★★★★★</span>
+        <p>924 оценки и 576 отзывов<br>на Яндекс Картах</p>
+      </div>
+      <div class="reviews__cta">
+        <p class="eyebrow">Отзывы</p>
+        <h2>Гости о нас</h2>
+        <p class="muted">Несколько отзывов с Яндекс Карт. Были у нас? Расскажите, как вам — каждый отзыв читаем сами.</p>
+        <a class="btn" href="https://yandex.ru/maps/?text=%D0%90%D1%84%D1%80%D0%B0%D1%81%D0%B8%D0%B0%D0%B1%2C%20%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%20%D0%A0%D0%B8%D0%BC%D1%81%D0%BA%D0%BE%D0%B3%D0%BE-%D0%9A%D0%BE%D1%80%D1%81%D0%B0%D0%BA%D0%BE%D0%B2%D0%B0%2C%2012%2C%20%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3" target="_blank" rel="noopener">Все отзывы на Яндексе</a>
+      </div>
+    </div>
+    <div class="wrap review-list">
+      <figure class="review">
+        <div class="review__stars" aria-label="5 из 5">★★★★★</div>
+        <blockquote>Вкусно поесть можно здесь! Очень вкусный ташкентский плов, изумительная самса. Большой выбор пахлавы. Просторное кафе, ненавязчивая восточная музыка не мешает общаться. Персонал радушный и очень позитивный. Заказ принесли быстро.</blockquote>
+        <figcaption><b>Ирина</b><span>9 мая</span></figcaption>
+      </figure>
+      <figure class="review">
+        <div class="review__stars" aria-label="5 из 5">★★★★★</div>
+        <blockquote>Прекрасное место, всё очень вкусно, а главное недолго ждать: манты, хинкали, салат, хачапури. Возвращаемся сюда не первый раз, обслуживание на высоте, очень приятная девушка всё подробно расскажет про каждое блюдо. Обязательно рекомендую к посещению!</blockquote>
+        <figcaption><b>Иришка К.</b><span>2 мая</span></figcaption>
+      </figure>
+      <figure class="review">
+        <div class="review__stars" aria-label="5 из 5">★★★★★</div>
+        <blockquote>Замечательный ресторан, уютная атмосфера, очень приветливый персонал, официант Анна просто супер, очень отзывчивая и приятная девушка. Обслуживание на все 100%. Меню большое по очень приемлемым ценам. Всё, что мы заказали, было просто восхитительно…</blockquote>
+        <figcaption><b>Валентина К.</b><span>23 мая</span></figcaption>
+      </figure>
+      <figure class="review">
+        <div class="review__stars" aria-label="5 из 5">★★★★★</div>
+        <blockquote>Для начала всем рекомендую брать чай по-азербайджански — для уютного семейного застолья то самое. Брали на компанию плов и жареный лагман…</blockquote>
+        <figcaption><b>Андрей Ч.</b><span>11 июля</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- CONTACTS -->
+  <section class="section" id="contacts">
+    <div class="wrap contacts">
+      <div class="contacts__info">
+        <p class="eyebrow">Контакты</p>
+        <h2>Ждём в гости</h2>
+        <dl>
+          <dt>Адрес</dt>
+          <dd>Санкт-Петербург, проспект Римского-Корсакова, 12, 1 этаж</dd>
+          <dt>Телефон</dt>
+          <dd><a href="tel:+79692210555">+7 (969) 221-05-55</a></dd>
+          <dt>Время работы</dt>
+          <dd>Круглосуточно, без выходных</dd>
+          <dt>Мы ВКонтакте</dt>
+          <dd><a href="https://vk.ru/afrasiab.cafe" target="_blank" rel="noopener">vk.ru/afrasiab.cafe</a></dd>
+        </dl>
+        <div class="hero__actions">
+          <a class="btn" href="tel:+79692210555">Позвонить</a>
+          <a class="btn btn--outline" href="https://yandex.ru/maps/?rtext=~%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3%2C%20%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%20%D0%A0%D0%B8%D0%BC%D1%81%D0%BA%D0%BE%D0%B3%D0%BE-%D0%9A%D0%BE%D1%80%D1%81%D0%B0%D0%BA%D0%BE%D0%B2%D0%B0%2C%2012" target="_blank" rel="noopener">Построить маршрут</a>
+        </div>
+      </div>
+      <div class="map">
+        <iframe title="Карта: Афрасиаб, проспект Римского-Корсакова, 12" src="https://yandex.ru/map-widget/v1/?text=%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3%2C%20%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%20%D0%A0%D0%B8%D0%BC%D1%81%D0%BA%D0%BE%D0%B3%D0%BE-%D0%9A%D0%BE%D1%80%D1%81%D0%B0%D0%BA%D0%BE%D0%B2%D0%B0%2C%2012&z=16" loading="lazy" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <span class="logo"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 3l4.5 10.5L35 18l-10.5 4.5L20 33l-4.5-10.5L5 18l10.5-4.5z"/></svg><span>Афрасиаб</span></span>
+    <span>пр. Римского-Корсакова, 12 · <a href="tel:+79692210555">+7 (969) 221-05-55</a> · <a href="https://vk.ru/afrasiab.cafe" target="_blank" rel="noopener">ВКонтакте</a></span>
+    <span class="muted">© <span id="year">2026</span> Кафе «Афрасиаб»</span>
+  </div>
+</footer>
+
+<a class="call-fab" href="tel:+79692210555" aria-label="Позвонить в кафе">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 013 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>
+</a>
+
+<script src="script.js"></script>
+</body>
+</html>
