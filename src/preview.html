@@ -30,6 +30,7 @@ a { color: inherit; }
 .nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 68px; }
 .brand { font-family: var(--font-display); font-size: 1.5rem; text-decoration: none; letter-spacing: .01em; white-space: nowrap; }
 .nav ul { display: flex; gap: 28px; list-style: none; margin: 0; padding: 0; }
+.nav .menu-cta { display: none; }
 .nav ul a { text-decoration: none; color: var(--muted); font-weight: 500; font-size: .95rem; transition: color .2s; }
 .nav ul a:hover, .nav ul a:focus-visible { color: var(--fg); }
 .nav-phone { font-weight: 700; text-decoration: none; white-space: nowrap; font-variant-numeric: tabular-nums; }
@@ -57,6 +58,16 @@ h1 .want { color: var(--accent); display: inline-block; transform: rotate(-3deg)
 .btn-ghost:hover { border-color: var(--accent); }
 .btn:focus-visible, .nav a:focus-visible, .brand:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
+/* Mobile: burger menu panel and a bottom bar with call / route */
+.burger { display: none; position: relative; width: 48px; height: 48px; margin-right: -10px; border: 0; background: none; color: var(--fg); cursor: pointer; }
+.burger span { position: absolute; left: 13px; right: 13px; height: 2px; border-radius: 2px; background: currentColor; transition: transform .25s, opacity .2s; }
+.burger span:nth-child(1) { top: 17px; } .burger span:nth-child(2) { top: 23px; } .burger span:nth-child(3) { top: 29px; }
+.nav.open .burger span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.nav.open .burger span:nth-child(2) { opacity: 0; }
+.nav.open .burger span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+.burger:focus-visible { outline: 2px solid var(--accent); outline-offset: -4px; border-radius: 10px; }
+.mbar { display: none; }
+
 @media (prefers-reduced-motion: no-preference) {
   .rise { animation: rise .8s cubic-bezier(.16, 1, .3, 1) both; }
   .d1 { animation-delay: .08s; } .d2 { animation-delay: .16s; } .d3 { animation-delay: .24s; }
@@ -66,7 +77,18 @@ h1 .want { color: var(--accent); display: inline-block; transform: rotate(-3deg)
 }
 
 @media (max-width: 900px) {
-  .nav ul { display: none; }
+  .nav-phone { display: none; }
+  .burger { display: block; }
+  .nav .wrap { min-height: 60px; }
+  .nav nav { position: absolute; left: 0; right: 0; top: 100%; background: var(--bg); border-bottom: 1px solid var(--line); padding: 8px 20px 24px; visibility: hidden; opacity: 0; transform: translateY(-8px); transition: opacity .2s, transform .2s, visibility 0s .2s; }
+  .nav.open nav { visibility: visible; opacity: 1; transform: none; transition: opacity .2s, transform .2s; }
+  .nav ul { flex-direction: column; gap: 0; }
+  .nav ul a { display: flex; align-items: center; min-height: 54px; font-size: 1.25rem; color: var(--fg); border-bottom: 1px solid var(--line); }
+  .nav .menu-cta { display: flex; width: 100%; margin-top: 18px; }
+  .mbar { display: flex; gap: 10px; position: fixed; left: 0; right: 0; bottom: 0; z-index: 9; padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px)); background: color-mix(in srgb, var(--bg) 90%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-top: 1px solid var(--line); transform: translateY(110%); transition: transform .3s cubic-bezier(.16, 1, .3, 1); }
+  .mbar.show { transform: none; }
+  .mbar .btn { flex: 1 1 0; min-height: 48px; padding: 0 12px; }
+  body { padding-bottom: 76px; }
   .hero .wrap { grid-template-columns: 1fr; min-height: 0; padding-block: 0 48px; }
   .hero-media { position: relative; inset: auto; width: auto; height: 92vw; max-height: 560px; }
   .hero-media img { object-position: 0% 50%; }
@@ -172,7 +194,7 @@ h1 .want { color: var(--accent); display: inline-block; transform: rotate(-3deg)
 <header class="nav">
   <div class="wrap">
     <a class="brand" href="#top">Кальян хочу!</a>
-    <nav aria-label="Разделы">
+    <nav id="site-menu" aria-label="Разделы">
       <ul>
         <li><a href="#menu">Меню</a></li>
         <li><a href="#hookah">Кальяны</a></li>
@@ -180,10 +202,17 @@ h1 .want { color: var(--accent); display: inline-block; transform: rotate(-3deg)
         <li><a href="#reviews">Отзывы</a></li>
         <li><a href="#contacts">Контакты</a></li>
       </ul>
+      <a class="btn btn-primary menu-cta" href="tel:+79818080088">Забронировать стол</a>
     </nav>
     <a class="nav-phone" href="tel:+79818080088">+7 981 808-00-88</a>
+    <button class="burger" type="button" aria-controls="site-menu" aria-expanded="false" aria-label="Открыть меню"><span></span><span></span><span></span></button>
   </div>
 </header>
+
+<div class="mbar" aria-label="Быстрые действия">
+  <a class="btn btn-primary" href="tel:+79818080088">Позвонить</a>
+  <a class="btn btn-ghost" href="https://yandex.ru/maps/?text=%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3%2C%20%D0%BF%D0%B5%D1%80.%20%D0%91%D1%80%D0%B8%D0%BD%D1%8C%D0%BA%D0%BE%2C%202" target="_blank" rel="noopener">Маршрут</a>
+</div>
 
 <main id="top">
   <section class="hero">
@@ -252,6 +281,22 @@ h1 .want { color: var(--accent); display: inline-block; transform: rotate(-3deg)
   if ('IntersectionObserver' in window) new IntersectionObserver(function (e) {
     on = e[0].isIntersecting; cancelAnimationFrame(raf); if (on && !still) raf = requestAnimationFrame(draw);
   }).observe(hero);
+})();
+</script>
+<script>
+/* Mobile menu toggle and the bottom call bar that appears once the hero buttons scroll away */
+(function () {
+  var nav = document.querySelector('.nav'), btn = nav && nav.querySelector('.burger');
+  if (btn) {
+    function set(open) { nav.classList.toggle('open', open); btn.setAttribute('aria-expanded', open); btn.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню'); }
+    btn.addEventListener('click', function () { set(!nav.classList.contains('open')); });
+    nav.querySelectorAll('nav a').forEach(function (a) { a.addEventListener('click', function () { set(false); }); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && nav.classList.contains('open')) { set(false); btn.focus(); } });
+  }
+  var bar = document.querySelector('.mbar'), ctas = document.querySelector('.hero .ctas');
+  if (bar && ctas && 'IntersectionObserver' in window) new IntersectionObserver(function (e) {
+    bar.classList.toggle('show', !e[0].isIntersecting && e[0].boundingClientRect.top < 0);
+  }).observe(ctas);
 })();
 </script>
 
