@@ -1,7 +1,7 @@
 name: Fetch menu photos
 on:
   push:
-    paths: [".github/menu-photos.txt"]
+    paths: [".github/menu-photos.txt", ".github/menu-samples.txt"]
 permissions:
   contents: write
 jobs:
@@ -17,11 +17,19 @@ jobs:
             curl -fsSL --retry 3 "$url" -o /tmp/p.png
             cwebp -quiet -q 78 -resize 640 640 /tmp/p.png -o "img/menu/gen/d$idx.webp"
           done < .github/menu-photos.txt
+          # Trial photos for approval, not used by the page
+          if [ -f .github/menu-samples.txt ]; then
+            mkdir -p img/menu/samples
+            while read -r name url; do
+              curl -fsSL --retry 3 "$url" -o /tmp/p.png
+              cwebp -quiet -q 78 -resize 640 640 /tmp/p.png -o "img/menu/samples/$name.webp"
+            done < .github/menu-samples.txt
+          fi
           ls img/menu/gen | wc -l
       - name: Commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
-          git add img/menu/gen
+          git add img/menu/gen img/menu/samples
           git commit -m "Add generated menu photos" || exit 0
           git push
