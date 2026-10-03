@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Кальян Хочу</title>
+<meta name="description" content="Кальян-бар «Кальян Хочу» в Петербурге: пер. Бринько, 2. Авторские кальяны, кухня до 6 утра, приставки и настольные игры.">
+<link rel="preload" href="fonts/pangolin-cyrillic-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+/* Self-hosted fonts (Fontsource, OFL): same look on every device, no Google Fonts request */
+@font-face { font-family: "Pangolin"; font-style: normal; font-weight: 400; font-display: swap; src: url(fonts/pangolin-cyrillic-400-normal.woff2) format("woff2"); unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116; }
+@font-face { font-family: "Pangolin"; font-style: normal; font-weight: 400; font-display: swap; src: url(fonts/pangolin-latin-ext-400-normal.woff2) format("woff2"); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family: "Pangolin"; font-style: normal; font-weight: 400; font-display: swap; src: url(fonts/pangolin-latin-400-normal.woff2) format("woff2"); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: "Manrope"; font-style: normal; font-weight: 400; font-display: swap; src: url(fonts/manrope-cyrillic-400-normal.woff2) format("woff2"); unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116; }
+@font-face { font-family: "Manrope"; font-style: normal; font-weight: 400; font-display: swap; src: url(fonts/manrope-latin-ext-400-normal.woff2) format("woff2"); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family: "Manrope"; font-style: normal; font-weight: 400; font-display: swap; src: url(fonts/manrope-latin-400-normal.woff2) format("woff2"); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: "Manrope"; font-style: normal; font-weight: 500; font-display: swap; src: url(fonts/manrope-cyrillic-500-normal.woff2) format("woff2"); unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116; }
+@font-face { font-family: "Manrope"; font-style: normal; font-weight: 500; font-display: swap; src: url(fonts/manrope-latin-ext-500-normal.woff2) format("woff2"); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family: "Manrope"; font-style: normal; font-weight: 500; font-display: swap; src: url(fonts/manrope-latin-500-normal.woff2) format("woff2"); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: "Manrope"; font-style: normal; font-weight: 700; font-display: swap; src: url(fonts/manrope-cyrillic-700-normal.woff2) format("woff2"); unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116; }
+@font-face { font-family: "Manrope"; font-style: normal; font-weight: 700; font-display: swap; src: url(fonts/manrope-latin-ext-700-normal.woff2) format("woff2"); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family: "Manrope"; font-style: normal; font-weight: 700; font-display: swap; src: url(fonts/manrope-latin-700-normal.woff2) format("woff2"); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+/* Layout: asymmetric split. Text left, one real venue photo bleeding off the right edge; photo on top on phones. One look only: the lounge at night. */
+:root {
+  --bg: #151416;
+  --surface: #201e21;
+  --fg: #f3eee6;
+  --muted: #b3aca3;
+  --accent: #f4b860;      /* warm glow of the neon cloud sign */
+  --accent-ink: #1b1508;
+  --line: rgba(243, 238, 230, .12);
+  --font-display: "Pangolin", "Comic Sans MS", cursive;
+  --font-body: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --radius: 14px;
+  color-scheme: dark;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html, body { background: var(--bg); color: var(--fg); }
+body { margin: 0; font-family: var(--font-body); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+a { color: inherit; }
+
+.wrap { max-width: 1240px; margin: 0 auto; padding-inline: clamp(16px, 4vw, 40px); }
+
+/* Navigation */
+.nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 68px; }
+.brand { font-family: var(--font-display); font-size: 1.5rem; text-decoration: none; letter-spacing: .01em; white-space: nowrap; }
+.nav ul { display: flex; gap: 28px; list-style: none; margin: 0; padding: 0; }
+.nav .menu-cta { display: none; }
+.nav ul a { text-decoration: none; color: var(--muted); font-weight: 500; font-size: .95rem; transition: color .2s; }
+.nav ul a:hover, .nav ul a:focus-visible { color: var(--fg); }
+.nav-phone { font-weight: 700; text-decoration: none; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.nav-phone:hover { color: var(--accent); }
+
+/* Hero: text on the dark left, one photo bleeding off the right edge and fading into the background */
+.hero { position: relative; overflow: hidden; }
+.hero .wrap { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; min-height: min(760px, calc(100dvh - 68px)); padding-block: clamp(40px, 7vw, 88px); }
+.hero-copy { min-width: 0; }
+.hero-media { position: absolute; inset: 0 0 0 auto; width: 58%; margin: 0; }
+.hero-media img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 0% 46%; }
+.hero-media { -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgb(0 0 0 / .2) 5%, rgb(0 0 0 / .55) 11%, rgb(0 0 0 / .85) 17%, #000 23%), linear-gradient(0deg, transparent 0%, rgb(0 0 0 / .5) 9%, #000 24%); -webkit-mask-composite: source-in; mask-image: linear-gradient(90deg, transparent 0%, rgb(0 0 0 / .2) 5%, rgb(0 0 0 / .55) 11%, rgb(0 0 0 / .85) 17%, #000 23%), linear-gradient(0deg, transparent 0%, rgb(0 0 0 / .5) 9%, #000 24%); mask-composite: intersect; }
+.smoke { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+.hours { display: inline-flex; flex-wrap: wrap; gap: 6px 14px; margin: 0 0 22px; color: var(--muted); font-size: .9rem; letter-spacing: .02em; }
+.hours strong { color: var(--accent); font-weight: 700; font-variant-numeric: tabular-nums; }
+h1 { font-family: var(--font-display); font-weight: 400; font-size: clamp(3.4rem, 9vw, 7rem); line-height: .95; margin: 0 0 24px; text-wrap: balance; }
+h1 .want { color: var(--accent); display: inline-block; transform: rotate(-3deg); }
+.lead { font-size: clamp(1.05rem, 1.6vw, 1.2rem); color: var(--muted); max-width: 36ch; margin: 0 0 36px; }
+.ctas { display: flex; flex-wrap: wrap; gap: 14px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 26px; border-radius: 999px; font-weight: 700; font-size: 1rem; text-decoration: none; white-space: nowrap; transition: transform .15s, background-color .2s, border-color .2s; }
+.btn:active { transform: translateY(1px) scale(.98); }
+.btn-primary { background: var(--accent); color: var(--accent-ink); }
+.btn-primary:hover { background: #f7c97f; }
+.btn-ghost { border: 1.5px solid var(--line); color: var(--fg); }
+.btn-ghost:hover { border-color: var(--accent); }
+.btn:focus-visible, .nav a:focus-visible, .brand:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+/* Mobile: burger menu panel and a bottom bar with call / route */
+.burger { display: none; position: relative; width: 48px; height: 48px; margin-right: -10px; border: 0; background: none; color: var(--fg); cursor: pointer; }
+.burger span { position: absolute; left: 13px; right: 13px; height: 2px; border-radius: 2px; background: currentColor; transition: transform .25s, opacity .2s; }
+.burger span:nth-child(1) { top: 17px; } .burger span:nth-child(2) { top: 23px; } .burger span:nth-child(3) { top: 29px; }
+.nav.open .burger span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.nav.open .burger span:nth-child(2) { opacity: 0; }
+.nav.open .burger span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+.burger:focus-visible { outline: 2px solid var(--accent); outline-offset: -4px; border-radius: 10px; }
+.mbar { display: none; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .rise { animation: rise .8s cubic-bezier(.16, 1, .3, 1) both; }
+  .d1 { animation-delay: .08s; } .d2 { animation-delay: .16s; } .d3 { animation-delay: .24s; }
+  .hero-media img { animation: fade 1.4s ease-out both; }
+  @keyframes fade { from { opacity: 0; } }
+  @keyframes rise { from { opacity: 0; transform: translateY(18px); } }
+}
+
+@media (max-width: 900px) {
+  .nav-phone { display: none; }
+  .burger { display: block; }
+  .nav .wrap { min-height: 60px; }
+  .nav nav { position: absolute; left: 0; right: 0; top: 100%; background: var(--bg); border-bottom: 1px solid var(--line); padding: 8px 20px 24px; visibility: hidden; opacity: 0; transform: translateY(-8px); transition: opacity .2s, transform .2s, visibility 0s .2s; }
+  .nav.open nav { visibility: visible; opacity: 1; transform: none; transition: opacity .2s, transform .2s; }
+  .nav ul { flex-direction: column; gap: 0; }
+  .nav ul a { display: flex; align-items: center; min-height: 54px; font-size: 1.25rem; color: var(--fg); border-bottom: 1px solid var(--line); }
+  .nav .menu-cta { display: flex; width: 100%; margin-top: 18px; }
+  .mbar { display: flex; gap: 10px; position: fixed; left: 0; right: 0; bottom: 0; z-index: 9; padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px)); background: color-mix(in srgb, var(--bg) 90%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-top: 1px solid var(--line); transform: translateY(110%); transition: transform .3s cubic-bezier(.16, 1, .3, 1); }
+  .mbar.show { transform: none; }
+  .mbar .btn { flex: 1 1 0; min-height: 48px; padding: 0 12px; }
+  body { padding-bottom: 76px; }
+  .hero .wrap { grid-template-columns: 1fr; min-height: 0; padding-block: 0 48px; }
+  .hero-media { position: relative; inset: auto; width: auto; height: 92vw; max-height: 560px; }
+  .hero-media img { object-position: 0% 50%; }
+  .hero-media { -webkit-mask-image: linear-gradient(0deg, transparent 0%, rgb(0 0 0 / .45) 9%, rgb(0 0 0 / .85) 18%, #000 26%); mask-image: linear-gradient(0deg, transparent 0%, rgb(0 0 0 / .45) 9%, rgb(0 0 0 / .85) 18%, #000 26%); }
+}
+@media (max-width: 420px) {
+  .btn { flex: 1 1 100%; }
+  .nav-phone { font-size: .9rem; }
+}
+
+/* Menu: horizontally scrollable category pills, photo cards for dishes with photos, compact two-column list for the rest */
+.menu { padding-block: clamp(56px, 8vw, 104px); border-top: 1px solid var(--line); }
+.section-title { font-family: var(--font-display); font-weight: 400; font-size: clamp(2.6rem, 6vw, 4.2rem); line-height: 1; margin: 0 0 12px; }
+.section-note { color: var(--muted); margin: 0 0 32px; max-width: 60ch; }
+.lunch { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; padding: 18px 22px; margin: 0 0 32px; border: 1.5px solid var(--accent); border-radius: var(--radius); }
+.lunch p { margin: 0; min-width: 0; }
+.lunch b { color: var(--accent); }
+.lunch .price { font-family: var(--font-display); font-size: 2rem; line-height: 1; color: var(--accent); white-space: nowrap; }
+.tabs { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; margin: 0 0 32px; padding-bottom: 4px; -webkit-overflow-scrolling: touch; }
+.tabs::-webkit-scrollbar { display: none; }
+.tab { flex: none; min-height: 42px; padding: 0 18px; border-radius: 999px; border: 1.5px solid var(--line); background: transparent; color: var(--muted); font: 500 .95rem var(--font-body); cursor: pointer; transition: color .2s, border-color .2s, background-color .2s; }
+.tab:hover { color: var(--fg); border-color: var(--muted); }
+.tab[aria-selected="true"] { background: var(--fg); border-color: var(--fg); color: var(--bg); }
+.tab:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.panel h3 { font-family: var(--font-display); font-weight: 400; font-size: 1.8rem; margin: 0 0 20px; }
+.js .panel h3 { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.panel + .panel { margin-top: 48px; }
+.js .panel + .panel { margin-top: 0; }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr)); gap: 20px; margin: 0 0 32px; }
+.card { min-width: 0; }
+.card img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; border-radius: var(--radius); background: var(--surface); }
+.card-body { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px; }
+.dish { margin: 0; font-weight: 700; min-width: 0; }
+.meta { color: var(--muted); font-size: .88rem; font-weight: 400; }
+.cost { white-space: nowrap; font-weight: 700; font-variant-numeric: tabular-nums; color: var(--accent); }
+.list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 56px; margin: 0; padding: 0; list-style: none; }
+.list li { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; min-width: 0; }
+.list .dish { font-weight: 500; }
+.list .meta { display: block; }
+@media (max-width: 700px) { .list { grid-template-columns: 1fr; } .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; } .card-body { flex-direction: column; gap: 4px; } }
+@media (max-width: 900px) {
+  .tabs { position: sticky; top: 60px; z-index: 5; margin: 0 -16px 24px; padding: 10px 16px; scroll-padding-inline: 16px; background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+  .tab { min-height: 44px; }
+  .card .meta { display: block; margin-top: 4px; line-height: 1.4; }
+  .card .dish { line-height: 1.3; }
+  .list { gap: 0; }
+  .list li { padding: 14px 0; border-bottom: 1px solid var(--line); }
+  .list li:first-child { padding-top: 0; }
+}
+
+/* Games: asymmetric bento. One large photo cell, two text cells stacked beside it */
+.games { padding-block: clamp(56px, 8vw, 104px); border-top: 1px solid var(--line); }
+.bento { display: grid; grid-template-columns: 2fr 1fr; grid-template-rows: 1fr 1fr; gap: 16px; min-height: 520px; }
+.tile { position: relative; min-width: 0; border-radius: var(--radius); overflow: hidden; padding: clamp(22px, 3vw, 32px); display: flex; flex-direction: column; justify-content: flex-end; gap: 8px; }
+.tile h3 { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.7rem, 3vw, 2.3rem); line-height: 1.05; margin: 0; }
+.tile p { margin: 0; color: var(--muted); max-width: 40ch; }
+.tile-photo { grid-row: span 2; }
+.tile-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 35%; }
+.tile-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgb(21 20 22 / .92) 0%, rgb(21 20 22 / .55) 30%, rgb(21 20 22 / 0) 60%); }
+.tile-photo > div { position: relative; z-index: 1; display: grid; gap: 8px; }
+.tile-photo p { color: var(--fg); opacity: .85; }
+.tile-board { background: var(--surface); }
+.tile-sport { background: var(--accent); color: var(--accent-ink); }
+.tile-sport p { color: var(--accent-ink); opacity: .8; }
+@media (max-width: 760px) {
+  .bento { grid-template-columns: 1fr; grid-template-rows: none; min-height: 0; }
+  .tile-photo { grid-row: auto; min-height: 380px; }
+  .tile { min-height: 180px; }
+}
+
+/* Reviews: rating column on the left, three short quotes on the right */
+.reviews { padding-block: clamp(56px, 8vw, 104px); border-top: 1px solid var(--line); }
+.reviews .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: clamp(32px, 6vw, 88px); align-items: start; }
+.score { font-family: var(--font-display); font-size: clamp(5rem, 11vw, 8rem); line-height: .9; color: var(--accent); margin: 0; }
+.score-note { color: var(--muted); margin: 8px 0 28px; }
+.stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 24px; margin: 0 0 28px; }
+.stats div { display: grid; gap: 2px; }
+.stats dt { color: var(--muted); font-size: .9rem; }
+.stats dd { margin: 0; font-weight: 700; font-size: 1.3rem; font-variant-numeric: tabular-nums; }
+.link { color: var(--fg); font-weight: 700; text-underline-offset: 4px; text-decoration-color: var(--accent); }
+.link:hover { color: var(--accent); }
+.quotes { display: grid; gap: 36px; margin: 0; padding: 0; list-style: none; }
+.quotes blockquote { margin: 0 0 10px; font-size: clamp(1.15rem, 2vw, 1.4rem); line-height: 1.45; }
+.quotes figcaption { color: var(--muted); font-size: .92rem; }
+.quotes figcaption b { color: var(--fg); font-weight: 700; }
+.quotes figure { margin: 0; }
+
+/* Contacts: street sign photo next to the practical details */
+.contacts { padding-block: clamp(56px, 8vw, 104px); border-top: 1px solid var(--line); }
+.contacts .wrap { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(32px, 6vw, 80px); align-items: center; }
+.contacts-photo { margin: 0; min-width: 0; }
+.contacts-photo img { display: block; width: 100%; height: auto; max-height: 620px; object-fit: cover; border-radius: var(--radius); }
+.facts { display: grid; gap: 24px; margin: 0 0 32px; }
+.facts div { display: grid; gap: 4px; }
+.facts dt { color: var(--muted); font-size: .9rem; }
+.facts dd { margin: 0; font-size: 1.2rem; font-weight: 500; }
+.facts dd small { display: block; color: var(--muted); font-size: .92rem; font-weight: 400; }
+.age { margin: 24px 0 0; color: var(--muted); font-size: .92rem; }
+
+/* Footer */
+.footer { border-top: 1px solid var(--line); padding-block: 32px 40px; color: var(--muted); font-size: .9rem; }
+.footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 32px; }
+.footer .brand { color: var(--fg); font-size: 1.3rem; }
+.footer p { margin: 0; }
+
+@media (max-width: 860px) {
+  .reviews .wrap, .contacts .wrap { grid-template-columns: 1fr; }
+  .contacts-photo img { max-height: 420px; }
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">Кальян хочу!</a>
+    <nav id="site-menu" aria-label="Разделы">
+      <ul>
+        <li><a href="#menu">Меню</a></li>
+        <li><a href="#hookah">Кальяны</a></li>
+        <li><a href="#games">Игры</a></li>
+        <li><a href="#reviews">Отзывы</a></li>
+        <li><a href="#contacts">Контакты</a></li>
+      </ul>
+      <a class="btn btn-primary menu-cta" href="tel:+79818080088">Забронировать стол</a>
+    </nav>
+    <a class="nav-phone" href="tel:+79818080088">+7 981 808-00-88</a>
+    <button class="burger" type="button" aria-controls="site-menu" aria-expanded="false" aria-label="Открыть меню"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="mbar" aria-label="Быстрые действия">
+  <a class="btn btn-primary" href="tel:+79818080088">Позвонить</a>
+  <a class="btn btn-ghost" href="https://yandex.ru/maps/?text=%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3%2C%20%D0%BF%D0%B5%D1%80.%20%D0%91%D1%80%D0%B8%D0%BD%D1%8C%D0%BA%D0%BE%2C%202" target="_blank" rel="noopener">Маршрут</a>
+</div>
+
+<main id="top">
+  <section class="hero">
+    <figure class="hero-media">
+        <img src="img/hero-neon.webp" width="1100" height="1465" alt="Кальян на столе на фоне светящейся вывески «Кальян хочу!»" fetchpriority="high">
+      </figure>
+    <canvas class="smoke" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <div class="hero-copy">
+        <p class="hours rise"><span>Каждый день <strong>12:00-06:00</strong></span><span>пер. Бринько, 2</span></p>
+        <h1 class="rise d1">Кальян <span class="want">хочу!</span></h1>
+        <p class="lead rise d2">Авторские кальяны, кухня до шести утра, приставки и настольные игры в центре Петербурга.</p>
+        <div class="ctas rise d3">
+          <a class="btn btn-primary" href="tel:+79818080088">Забронировать стол</a>
+          <a class="btn btn-ghost" href="#menu">Смотреть меню</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<script>
+/* Hookah smoke: slow, light fog creeping across the whole hero (WebGL noise). One still frame for reduced motion. */
+(function () {
+  var hero = document.querySelector('.hero'), cv = hero && hero.querySelector('.smoke');
+  if (!cv) return;
+  var gl = cv.getContext('webgl', { premultipliedAlpha: true, alpha: true, antialias: false });
+  if (!gl) { cv.remove(); return; }
+  var vs = 'attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}';
+  var fs = [
+    '#ifdef GL_FRAGMENT_PRECISION_HIGH\nprecision highp float;\n#else\nprecision mediump float;\n#endif',
+    'uniform vec2 r;uniform float t;',
+    'float h(vec2 p){vec3 q=fract(vec3(p.xyx)*.1031);q+=dot(q,q.yzx+33.33);return fract((q.x+q.y)*q.z);}',
+    'float n(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);',
+    'return mix(mix(h(i),h(i+vec2(1,0)),f.x),mix(h(i+vec2(0,1)),h(i+vec2(1,1)),f.x),f.y);}',
+    'float fbm(vec2 p){float v=0.,a=.5;mat2 m=mat2(1.6,1.2,-1.2,1.6);for(int i=0;i<5;i++){v+=a*n(p);p=m*p;a*=.5;}return v;}',
+    'void main(){vec2 uv=gl_FragCoord.xy/r;vec2 p=vec2(uv.x*r.x/r.y,uv.y)*2.2;',
+    'vec2 q=vec2(fbm(p+vec2(t*.05,-t*.02)),fbm(p+vec2(5.2,1.3)-vec2(t*.03,t*.015)));',
+    'float d=fbm(p+2.4*q+vec2(-t*.04,-t*.025));',
+    'd=smoothstep(.42,.95,d);',
+    'float fall=mix(1.,.45,smoothstep(.0,1.,uv.y));',
+    'float a=d*fall*(r.x<r.y?.65:.5);',
+    'vec3 c=mix(vec3(.95,.9,.84),vec3(1.,.86,.66),q.x);',
+    'gl_FragColor=vec4(c*a,a);}'
+  ].join('\n');
+  function sh(type, src) { var s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s); return s; }
+  var pr = gl.createProgram();
+  gl.attachShader(pr, sh(gl.VERTEX_SHADER, vs)); gl.attachShader(pr, sh(gl.FRAGMENT_SHADER, fs)); gl.linkProgram(pr);
+  if (!gl.getProgramParameter(pr, gl.LINK_STATUS)) { cv.remove(); return; }
+  gl.useProgram(pr);
+  gl.bindBuffer(gl.ARRAY_BUFFER, gl.createBuffer());
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);
+  var loc = gl.getAttribLocation(pr, 'p'); gl.enableVertexAttribArray(loc); gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+  var uR = gl.getUniformLocation(pr, 'r'), uT = gl.getUniformLocation(pr, 't');
+  var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches, on = true, raf = 0, t0 = performance.now();
+  function size() {
+    var s = 0.5, w = Math.max(1, Math.round(cv.clientWidth * s)), h = Math.max(1, Math.round(cv.clientHeight * s));
+    if (cv.width !== w || cv.height !== h) { cv.width = w; cv.height = h; gl.viewport(0, 0, w, h); }
+    gl.uniform2f(uR, w, h);
+  }
+  function draw(now) {
+    gl.uniform1f(uT, 20 + (now - t0) / 1000);
+    gl.drawArrays(gl.TRIANGLES, 0, 3);
+    if (!still && on) raf = requestAnimationFrame(draw);
+  }
+  size(); draw(t0);
+  window.addEventListener('resize', function () { size(); if (still) draw(performance.now()); });
+  if ('IntersectionObserver' in window) new IntersectionObserver(function (e) {
+    on = e[0].isIntersecting; cancelAnimationFrame(raf); if (on && !still) raf = requestAnimationFrame(draw);
+  }).observe(hero);
+})();
+</script>
+<script>
+/* Mobile menu toggle and the bottom call bar that appears once the hero buttons scroll away */
+(function () {
+  var nav = document.querySelector('.nav'), btn = nav && nav.querySelector('.burger');
+  if (btn) {
+    function set(open) { nav.classList.toggle('open', open); btn.setAttribute('aria-expanded', open); btn.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню'); }
+    btn.addEventListener('click', function () { set(!nav.classList.contains('open')); });
+    nav.querySelectorAll('nav a').forEach(function (a) { a.addEventListener('click', function () { set(false); }); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && nav.classList.contains('open')) { set(false); btn.focus(); } });
+  }
+  var bar = document.querySelector('.mbar'), ctas = document.querySelector('.hero .ctas');
+  if (bar && ctas && 'IntersectionObserver' in window) new IntersectionObserver(function (e) {
+    bar.classList.toggle('show', !e[0].isIntersecting && e[0].boundingClientRect.top < 0);
+  }).observe(ctas);
+})();
+</script>
+
+  <section class="menu" id="menu">
+    <div class="wrap">
+      <h2 class="section-title">Меню</h2>
+      <p class="section-note">Кальяны, кухня и бар. Цены в рублях, актуальные цены уточняйте у официанта.</p>
+      <div class="lunch" id="hookah">
+        <p><b>Бизнес-ланч с кальяном</b> по будням с 12:00 до 16:30: суп, салат, горячее, чай или кофе и премиум-кальян.</p>
+        <span class="price">990 ₽</span>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Разделы меню"><button class="tab" role="tab" type="button" data-target="m-hookah" aria-controls="m-hookah">Кальяны</button><button class="tab" role="tab" type="button" data-target="m-snacks" aria-controls="m-snacks">Закуски</button><button class="tab" role="tab" type="button" data-target="m-salads" aria-controls="m-salads">Салаты</button><button class="tab" role="tab" type="button" data-target="m-soups" aria-controls="m-soups">Супы</button><button class="tab" role="tab" type="button" data-target="m-hot" aria-controls="m-hot">Горячее</button><button class="tab" role="tab" type="button" data-target="m-pizza" aria-controls="m-pizza">Пицца</button><button class="tab" role="tab" type="button" data-target="m-street" aria-controls="m-street">Стрит-фуд</button><button class="tab" role="tab" type="button" data-target="m-japan" aria-controls="m-japan">Японская кухня</button><button class="tab" role="tab" type="button" data-target="m-desserts" aria-controls="m-desserts">Десерты</button><button class="tab" role="tab" type="button" data-target="m-tea" aria-controls="m-tea">Чай</button><button class="tab" role="tab" type="button" data-target="m-drinks" aria-controls="m-drinks">Напитки</button><button class="tab" role="tab" type="button" data-target="m-beer" aria-controls="m-beer">Пиво</button></div>
+      <div class="panel" id="m-hookah" role="tabpanel"><h3>Кальяны</h3><div class="cards"><article class="card"><img src="img/menu/hookah-classic.webp" width="640" height="640" loading="lazy" alt="Кальян Классический"><div class="card-body"><p class="dish">Кальян Классический </p><span class="cost">1 600 ₽</span></div></article><article class="card"><img src="img/menu/hookah-premium.webp" width="640" height="640" loading="lazy" alt="Кальян Премиум"><div class="card-body"><p class="dish">Кальян Премиум </p><span class="cost">2 000 ₽</span></div></article><article class="card"><img src="img/menu/hookah-fruit.webp" width="640" height="640" loading="lazy" alt="Кальян на любом фрукте"><div class="card-body"><p class="dish">Кальян на любом фрукте <span class="meta">Чаша из фрукта, плюс к цене любого кальяна</span></p><span class="cost">+1 000 ₽</span></div></article></div></div><div class="panel" id="m-snacks" role="tabpanel"><h3>Закуски</h3><div class="cards"><article class="card"><img src="img/menu/gen/d00.webp" width="640" height="640" loading="lazy" alt="Креветки темпура"><div class="card-body"><p class="dish">Креветки темпура <span class="meta">120/40 г</span></p><span class="cost">620 ₽</span></div></article><article class="card"><img src="img/menu/gen/d01.webp" width="640" height="640" loading="lazy" alt="Брускетта с лососем"><div class="card-body"><p class="dish">Брускетта с лососем <span class="meta">200 г</span></p><span class="cost">590 ₽</span></div></article><article class="card"><img src="img/menu/gen/d02.webp" width="640" height="640" loading="lazy" alt="Брускетта с говядиной и пармезаном"><div class="card-body"><p class="dish">Брускетта с говядиной и пармезаном <span class="meta">200 г</span></p><span class="cost">620 ₽</span></div></article><article class="card"><img src="img/menu/gen/d03.webp" width="640" height="640" loading="lazy" alt="Брускетта с вялеными томатами"><div class="card-body"><p class="dish">Брускетта с вялеными томатами <span class="meta">200 г</span></p><span class="cost">490 ₽</span></div></article><article class="card"><img src="img/menu/gen/d04.webp" width="640" height="640" loading="lazy" alt="Чесночные гренки"><div class="card-body"><p class="dish">Чесночные гренки <span class="meta">80/40 г</span></p><span class="cost">уточняйте</span></div></article><article class="card"><img src="img/menu/gen/d05.webp" width="640" height="640" loading="lazy" alt="Сырные палочки"><div class="card-body"><p class="dish">Сырные палочки <span class="meta">110/40 г</span></p><span class="cost">уточняйте</span></div></article></div></div><div class="panel" id="m-salads" role="tabpanel"><h3>Салаты</h3><div class="cards"><article class="card"><img src="img/menu/gen/d06.webp" width="640" height="640" loading="lazy" alt="Цезарь с курицей"><div class="card-body"><p class="dish">Цезарь с курицей <span class="meta">280 г</span></p><span class="cost">590 ₽</span></div></article><article class="card"><img src="img/menu/gen/d07.webp" width="640" height="640" loading="lazy" alt="Салат с говядиной"><div class="card-body"><p class="dish">Салат с говядиной <span class="meta">240 г</span></p><span class="cost">720 ₽</span></div></article><article class="card"><img src="img/menu/gen/d08.webp" width="640" height="640" loading="lazy" alt="Цезарь с креветками"><div class="card-body"><p class="dish">Цезарь с креветками <span class="meta">260 г</span></p><span class="cost">620 ₽</span></div></article><article class="card"><img src="img/menu/gen/d09.webp" width="640" height="640" loading="lazy" alt="Греческий салат"><div class="card-body"><p class="dish">Греческий салат <span class="meta">280 г</span></p><span class="cost">590 ₽</span></div></article><article class="card"><img src="img/menu/gen/d10.webp" width="640" height="640" loading="lazy" alt="Салат с хрустящими баклажанами"><div class="card-body"><p class="dish">Салат с хрустящими баклажанами <span class="meta">370 г</span></p><span class="cost">690 ₽</span></div></article><article class="card"><img src="img/menu/gen/d11.webp" width="640" height="640" loading="lazy" alt="Салат Деревенский"><div class="card-body"><p class="dish">Салат Деревенский <span class="meta">220 г</span></p><span class="cost">490 ₽</span></div></article></div></div><div class="panel" id="m-soups" role="tabpanel"><h3>Супы</h3><div class="cards"><article class="card"><img src="img/menu/gen/d12.webp" width="640" height="640" loading="lazy" alt="Борщ с говядиной"><div class="card-body"><p class="dish">Борщ с говядиной <span class="meta">280 г</span></p><span class="cost">550 ₽</span></div></article><article class="card"><img src="img/menu/gen/d13.webp" width="640" height="640" loading="lazy" alt="Куриный суп"><div class="card-body"><p class="dish">Куриный суп <span class="meta">260 г</span></p><span class="cost">490 ₽</span></div></article><article class="card"><img src="img/menu/gen/d14.webp" width="640" height="640" loading="lazy" alt="Том Ям с морепродуктами"><div class="card-body"><p class="dish">Том Ям с морепродуктами <span class="meta">320 г</span></p><span class="cost">690 ₽</span></div></article></div></div><div class="panel" id="m-hot" role="tabpanel"><h3>Горячее</h3><div class="cards"><article class="card"><img src="img/menu/gen/d15.webp" width="640" height="640" loading="lazy" alt="Свиные рёбра"><div class="card-body"><p class="dish">Свиные рёбра <span class="meta">250-270 г</span></p><span class="cost">720 ₽</span></div></article><article class="card"><img src="img/menu/gen/d16.webp" width="640" height="640" loading="lazy" alt="ВОК с курицей"><div class="card-body"><p class="dish">ВОК с курицей <span class="meta">290 г</span></p><span class="cost">590 ₽</span></div></article><article class="card"><img src="img/menu/gen/d17.webp" width="640" height="640" loading="lazy" alt="Спагетти Карбонара"><div class="card-body"><p class="dish">Спагетти Карбонара <span class="meta">190 г</span></p><span class="cost">620 ₽</span></div></article><article class="card"><img src="img/menu/gen/d18.webp" width="640" height="640" loading="lazy" alt="Куриная грудка"><div class="card-body"><p class="dish">Куриная грудка <span class="meta">260 г, со свежими овощами</span></p><span class="cost">620 ₽</span></div></article><article class="card"><img src="img/menu/gen/d19.webp" width="640" height="640" loading="lazy" alt="Бифштекс"><div class="card-body"><p class="dish">Бифштекс <span class="meta">280 г, с картофельным пюре</span></p><span class="cost">690 ₽</span></div></article><article class="card"><img src="img/menu/gen/d20.webp" width="640" height="640" loading="lazy" alt="ВОК с креветками"><div class="card-body"><p class="dish">ВОК с креветками <span class="meta">290 г</span></p><span class="cost">620 ₽</span></div></article><article class="card"><img src="img/menu/gen/d21.webp" width="640" height="640" loading="lazy" alt="Паста с лососем и креветками"><div class="card-body"><p class="dish">Паста с лососем и креветками <span class="meta">190 г</span></p><span class="cost">690 ₽</span></div></article><article class="card"><img src="img/menu/gen/d22.webp" width="640" height="640" loading="lazy" alt="Паста с курицей и беконом"><div class="card-body"><p class="dish">Паста с курицей и беконом <span class="meta">190 г</span></p><span class="cost">670 ₽</span></div></article><article class="card"><img src="img/menu/gen/d23.webp" width="640" height="640" loading="lazy" alt="Паста с курицей и грибами"><div class="card-body"><p class="dish">Паста с курицей и грибами <span class="meta">190 г</span></p><span class="cost">550 ₽</span></div></article><article class="card"><img src="img/menu/gen/d24.webp" width="640" height="640" loading="lazy" alt="Куриные котлеты"><div class="card-body"><p class="dish">Куриные котлеты <span class="meta">230 г</span></p><span class="cost">550 ₽</span></div></article><article class="card"><img src="img/menu/gen/d25.webp" width="640" height="640" loading="lazy" alt="Пельмени со сметаной"><div class="card-body"><p class="dish">Пельмени со сметаной <span class="meta">260 г</span></p><span class="cost">620 ₽</span></div></article><article class="card"><img src="img/menu/gen/d26.webp" width="640" height="640" loading="lazy" alt="Рваная говядина"><div class="card-body"><p class="dish">Рваная говядина <span class="meta">100 г</span></p><span class="cost">870 ₽</span></div></article></div></div><div class="panel" id="m-pizza" role="tabpanel"><h3>Пицца</h3><div class="cards"><article class="card"><img src="img/menu/gen/d27.webp" width="640" height="640" loading="lazy" alt="Пеперони"><div class="card-body"><p class="dish">Пеперони <span class="meta">280 г</span></p><span class="cost">590 ₽</span></div></article><article class="card"><img src="img/menu/gen/d28.webp" width="640" height="640" loading="lazy" alt="4 сыра"><div class="card-body"><p class="dish">4 сыра <span class="meta">260 г</span></p><span class="cost">590 ₽</span></div></article><article class="card"><img src="img/menu/gen/d29.webp" width="640" height="640" loading="lazy" alt="Чикен Песто"><div class="card-body"><p class="dish">Чикен Песто <span class="meta">280 г</span></p><span class="cost">590 ₽</span></div></article></div></div><div class="panel" id="m-street" role="tabpanel"><h3>Стрит-фуд</h3><div class="cards"><article class="card"><img src="img/menu/gen/d30.webp" width="640" height="640" loading="lazy" alt="Бургер с говядиной"><div class="card-body"><p class="dish">Бургер с говядиной <span class="meta">360 г, с картофелем фри</span></p><span class="cost">720 ₽</span></div></article><article class="card"><img src="img/menu/gen/d31.webp" width="640" height="640" loading="lazy" alt="Бургер с рваной говядиной"><div class="card-body"><p class="dish">Бургер с рваной говядиной <span class="meta">420 г, с картофелем фри</span></p><span class="cost">870 ₽</span></div></article><article class="card"><img src="img/menu/gen/d32.webp" width="640" height="640" loading="lazy" alt="Бургер с курицей"><div class="card-body"><p class="dish">Бургер с курицей <span class="meta">360 г, с картофелем фри</span></p><span class="cost">620 ₽</span></div></article><article class="card"><img src="img/menu/gen/d33.webp" width="640" height="640" loading="lazy" alt="Кесадилья с курицей"><div class="card-body"><p class="dish">Кесадилья с курицей <span class="meta">360 г, с картофелем фри</span></p><span class="cost">590 ₽</span></div></article><article class="card"><img src="img/menu/gen/d34.webp" width="640" height="640" loading="lazy" alt="Сэндвич с курицей"><div class="card-body"><p class="dish">Сэндвич с курицей <span class="meta">290 г</span></p><span class="cost">490 ₽</span></div></article></div></div><div class="panel" id="m-japan" role="tabpanel"><h3>Японская кухня</h3><div class="cards"><article class="card"><img src="img/menu/gen/d35.webp" width="640" height="640" loading="lazy" alt="Поке с лососем"><div class="card-body"><p class="dish">Поке с лососем <span class="meta">260 г</span></p><span class="cost">620 ₽</span></div></article><article class="card"><img src="img/menu/gen/d36.webp" width="640" height="640" loading="lazy" alt="Филадельфия с лососем"><div class="card-body"><p class="dish">Филадельфия с лососем <span class="meta">210 г</span></p><span class="cost">690 ₽</span></div></article><article class="card"><img src="img/menu/gen/d37.webp" width="640" height="640" loading="lazy" alt="Темпура ролл с креветками"><div class="card-body"><p class="dish">Темпура ролл с креветками <span class="meta">190 г</span></p><span class="cost">620 ₽</span></div></article><article class="card"><img src="img/menu/gen/d38.webp" width="640" height="640" loading="lazy" alt="Темпура ролл с лососем"><div class="card-body"><p class="dish">Темпура ролл с лососем <span class="meta">190 г</span></p><span class="cost">620 ₽</span></div></article><article class="card"><img src="img/menu/gen/d39.webp" width="640" height="640" loading="lazy" alt="Запечённый ролл с лососем"><div class="card-body"><p class="dish">Запечённый ролл с лососем <span class="meta">220 г</span></p><span class="cost">590 ₽</span></div></article><article class="card"><img src="img/menu/gen/d40.webp" width="640" height="640" loading="lazy" alt="Запечённый ролл с курицей"><div class="card-body"><p class="dish">Запечённый ролл с курицей <span class="meta">230 г</span></p><span class="cost">450 ₽</span></div></article></div></div><div class="panel" id="m-desserts" role="tabpanel"><h3>Десерты</h3><div class="cards"><article class="card"><img src="img/menu/gen/d41.webp" width="640" height="640" loading="lazy" alt="Пахлава фисташковая"><div class="card-body"><p class="dish">Пахлава фисташковая </p><span class="cost">490 ₽</span></div></article><article class="card"><img src="img/menu/gen/d42.webp" width="640" height="640" loading="lazy" alt="Шоколадный фондан с мороженым"><div class="card-body"><p class="dish">Шоколадный фондан с мороженым </p><span class="cost">540 ₽</span></div></article><article class="card"><img src="img/menu/gen/d43.webp" width="640" height="640" loading="lazy" alt="Чизкейк Нью-Йорк"><div class="card-body"><p class="dish">Чизкейк Нью-Йорк </p><span class="cost">350 ₽</span></div></article><article class="card"><img src="img/menu/gen/d44.webp" width="640" height="640" loading="lazy" alt="Мороженое"><div class="card-body"><p class="dish">Мороженое <span class="meta">3 шарика</span></p><span class="cost">190 ₽</span></div></article></div></div><div class="panel" id="m-tea" role="tabpanel"><h3>Чай</h3><div class="cards"><article class="card"><img src="img/menu/gen/d45.webp" width="640" height="640" loading="lazy" alt="Фирменный чай"><div class="card-body"><p class="dish">Фирменный чай <span class="meta">800 мл, облепиховый, малина с имбирём, пуэр на вишне, витаминный</span></p><span class="cost">690 ₽</span></div></article><article class="card"><img src="img/menu/gen/d46.webp" width="640" height="640" loading="lazy" alt="Чёрный"><div class="card-body"><p class="dish">Чёрный <span class="meta">800 мл, ассам, эрл грей</span></p><span class="cost">460 ₽</span></div></article><article class="card"><img src="img/menu/gen/d47.webp" width="640" height="640" loading="lazy" alt="Зелёный"><div class="card-body"><p class="dish">Зелёный <span class="meta">800 мл, жасминовый, сенча</span></p><span class="cost">460 ₽</span></div></article><article class="card"><img src="img/menu/gen/d48.webp" width="640" height="640" loading="lazy" alt="Травяной и фруктовый"><div class="card-body"><p class="dish">Травяной и фруктовый <span class="meta">800 мл, бодрость, лесной сбор, гречишный, вишнёвый пунш</span></p><span class="cost">460 ₽</span></div></article><article class="card"><img src="img/menu/gen/d49.webp" width="640" height="640" loading="lazy" alt="Улун"><div class="card-body"><p class="dish">Улун <span class="meta">800 мл, габа алишань, те гуань инь, да хун пао</span></p><span class="cost">460 ₽</span></div></article><article class="card"><img src="img/menu/gen/d50.webp" width="640" height="640" loading="lazy" alt="Пуэр"><div class="card-body"><p class="dish">Пуэр <span class="meta">800 мл, шу пуэр «Лао Ча Тоу 20 лет»</span></p><span class="cost">460 ₽</span></div></article></div></div><div class="panel" id="m-drinks" role="tabpanel"><h3>Напитки</h3><div class="cards"><article class="card"><img src="img/menu/gen/d51.webp" width="640" height="640" loading="lazy" alt="Домашний лимонад"><div class="card-body"><p class="dish">Домашний лимонад <span class="meta">400 мл, киви, яблоко-базилик, ананас-клюква, малина-огурец, манго-маракуйя, груша-апельсин</span></p><span class="cost">420 ₽</span></div></article><article class="card"><img src="img/menu/gen/d52.webp" width="640" height="640" loading="lazy" alt="Домашний лимонад"><div class="card-body"><p class="dish">Домашний лимонад <span class="meta">1 л, те же вкусы, кувшин на компанию</span></p><span class="cost">690 ₽</span></div></article><article class="card"><img src="img/menu/gen/d53.webp" width="640" height="640" loading="lazy" alt="Кола"><div class="card-body"><p class="dish">Кола <span class="meta">330 мл</span></p><span class="cost">290 ₽</span></div></article><article class="card"><img src="img/menu/gen/d54.webp" width="640" height="640" loading="lazy" alt="Вода с газом или без"><div class="card-body"><p class="dish">Вода с газом или без </p><span class="cost">290 ₽</span></div></article><article class="card"><img src="img/menu/gen/d55.webp" width="640" height="640" loading="lazy" alt="Сок"><div class="card-body"><p class="dish">Сок <span class="meta">300 мл</span></p><span class="cost">250 ₽</span></div></article><article class="card"><img src="img/menu/gen/d56.webp" width="640" height="640" loading="lazy" alt="Red Bull"><div class="card-body"><p class="dish">Red Bull <span class="meta">355 мл</span></p><span class="cost">390 ₽</span></div></article></div></div><div class="panel" id="m-beer" role="tabpanel"><h3>Пиво</h3><div class="cards"><article class="card"><img src="img/menu/gen/d57.webp" width="640" height="640" loading="lazy" alt="Шпатен"><div class="card-body"><p class="dish">Шпатен <span class="meta">450 мл, светлый лагер, 5,2%</span></p><span class="cost">490 ₽</span></div></article><article class="card"><img src="img/menu/gen/d58.webp" width="640" height="640" loading="lazy" alt="Корона Экстра"><div class="card-body"><p class="dish">Корона Экстра <span class="meta">330 мл, светлый лагер, 4,5%</span></p><span class="cost">490 ₽</span></div></article><article class="card"><img src="img/menu/gen/d59.webp" width="640" height="640" loading="lazy" alt="Пауланер"><div class="card-body"><p class="dish">Пауланер <span class="meta">500 мл, пшеничное нефильтрованное, 5,5%</span></p><span class="cost">550 ₽</span></div></article><article class="card"><img src="img/menu/gen/d60.webp" width="640" height="640" loading="lazy" alt="Францисканер"><div class="card-body"><p class="dish">Францисканер <span class="meta">450 мл, светлое нефильтрованное, 5,0%</span></p><span class="cost">490 ₽</span></div></article><article class="card"><img src="img/menu/gen/d61.webp" width="640" height="640" loading="lazy" alt="Гиннесс Стаут"><div class="card-body"><p class="dish">Гиннесс Стаут <span class="meta">500 мл, тёмное, 4,2%</span></p><span class="cost">550 ₽</span></div></article><article class="card"><img src="img/menu/gen/d62.webp" width="640" height="640" loading="lazy" alt="Сидр Белый Феникс"><div class="card-body"><p class="dish">Сидр Белый Феникс <span class="meta">450 мл, 5,6%</span></p><span class="cost">490 ₽</span></div></article></div></div>
+    </div>
+  </section>
+
+  <section class="games" id="games">
+    <div class="wrap">
+      <h2 class="section-title">Не только кальян</h2>
+      <p class="section-note">Приходите компанией: есть чем заняться до шести утра.</p>
+      <div class="bento">
+        <article class="tile tile-photo">
+          <img src="img/games-console.webp" width="900" height="1209" loading="lazy" alt="Кальян у экрана с файтингом на игровой приставке">
+          <div>
+            <h3>Игровые приставки</h3>
+            <p>Большие экраны и джойстики на компанию. Файтинги, гонки и всё для вечера с друзьями.</p>
+          </div>
+        </article>
+        <article class="tile tile-board">
+          <h3>Настольные игры</h3>
+          <p>Попросите у официанта, принесём к столу.</p>
+        </article>
+        <article class="tile tile-sport">
+          <h3>Спорт на проекторе</h3>
+          <p>Смотрим важные матчи вместе. Про трансляцию лучше спросить заранее.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="reviews" id="reviews">
+    <div class="wrap">
+      <div>
+        <h2 class="section-title">Отзывы</h2>
+        <p class="score">4,9</p>
+        <p class="score-note">816 оценок и 418 отзывов на Яндекс Картах</p>
+        <dl class="stats">
+          <div><dt>Атмосфера</dt><dd>98%</dd></div>
+          <div><dt>Еда</dt><dd>97%</dd></div>
+          <div><dt>Персонал</dt><dd>92%</dd></div>
+          <div><dt>Кальян</dt><dd>91%</dd></div>
+        </dl>
+        <a class="link" href="https://yandex.ru/maps/?text=%D0%9A%D0%B0%D0%BB%D1%8C%D1%8F%D0%BD%20%D0%A5%D0%BE%D1%87%D1%83%2C%20%D0%BF%D0%B5%D1%80.%20%D0%91%D1%80%D0%B8%D0%BD%D1%8C%D0%BA%D0%BE%2C%202" target="_blank" rel="noopener">Все отзывы на Яндекс Картах</a>
+      </div>
+      <ul class="quotes">
+        <li><figure><blockquote>«Обслуживание на уровне, вкус и качество еды вообще кайфарик. Есть приставка, телевизоры, скучно точно не будет.»</blockquote><figcaption><b>Евгений К.</b>, 30 августа 2025</figcaption></figure></li>
+        <li><figure><blockquote>«Все супер! Позвонили, забронировали стол, пришли и сразу сели.»</blockquote><figcaption><b>Игорь Михайлович</b>, 26 декабря 2025</figcaption></figure></li>
+        <li><figure><blockquote>«Действительно хорошее место. Цены ниже, чем в некоторых других кальянках.»</blockquote><figcaption><b>Андрей</b>, 19 сентября 2025</figcaption></figure></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="contacts" id="contacts">
+    <div class="wrap">
+      <figure class="contacts-photo">
+        <img src="img/sign.webp" width="800" height="1067" loading="lazy" alt="Вывеска «Кальян хочу!» на фасаде дома">
+      </figure>
+      <div>
+        <h2 class="section-title">Как нас найти</h2>
+        <p class="section-note">Ищите на фасаде вывеску «Кальян хочу!».</p>
+        <dl class="facts">
+          <div><dt>Адрес</dt><dd>Санкт-Петербург, пер. Бринько, 2<small>Цокольный этаж</small></dd></div>
+          <div><dt>Часы работы</dt><dd>Каждый день с 12:00 до 06:00</dd></div>
+          <div><dt>Телефон и WhatsApp</dt><dd><a class="link" href="tel:+79818080088">+7 981 808-00-88</a></dd></div>
+        </dl>
+        <div class="ctas">
+          <a class="btn btn-primary" href="tel:+79818080088">Забронировать стол</a>
+          <a class="btn btn-ghost" href="https://yandex.ru/maps/?text=%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3%2C%20%D0%BF%D0%B5%D1%80.%20%D0%91%D1%80%D0%B8%D0%BD%D1%8C%D0%BA%D0%BE%2C%202" target="_blank" rel="noopener">Построить маршрут</a>
+          <a class="btn btn-ghost" href="https://wa.me/79818080088" target="_blank" rel="noopener">Написать в WhatsApp</a>
+        </div>
+        <p class="age">Кальяны подаём только гостям старше 18 лет. Возьмите с собой паспорт.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <a class="brand" href="#top">Кальян хочу!</a>
+    <p>пер. Бринько, 2. Каждый день 12:00-06:00. +7 981 808-00-88</p>
+    <p>Курение вредит вашему здоровью. 18+</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var tabs = document.querySelectorAll('.tab');
+  var panels = document.querySelectorAll('.panel');
+  if (!tabs.length) return;
+  document.documentElement.classList.add('js');
+  function show(id) {
+    tabs.forEach(function (t) { t.setAttribute('aria-selected', t.dataset.target === id ? 'true' : 'false'); t.tabIndex = t.dataset.target === id ? 0 : -1; });
+    panels.forEach(function (p) { p.hidden = p.id !== id; });
+  }
+  tabs.forEach(function (t, i) {
+    t.addEventListener('click', function () {
+      show(t.dataset.target);
+      var bar = t.parentNode;
+      bar.scrollTo({ left: t.offsetLeft - (bar.clientWidth - t.offsetWidth) / 2, behavior: 'smooth' });
+      if (getComputedStyle(bar).position !== 'sticky') return;
+      var head = document.querySelector('.nav'), panel = document.getElementById(t.dataset.target);
+      var y = panel.getBoundingClientRect().top + window.scrollY - (head ? head.offsetHeight : 0) - bar.offsetHeight - 16;
+      if (window.scrollY > y) window.scrollTo({ top: y, behavior: 'smooth' });
+    });
+    t.addEventListener('keydown', function (e) {
+      var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      if (!d) return;
+      var n = tabs[(i + d + tabs.length) % tabs.length];
+      n.focus(); show(n.dataset.target);
+    });
+  });
+  show(tabs[0].dataset.target);
+})();
+</script>
+
+</body>
+</html>
