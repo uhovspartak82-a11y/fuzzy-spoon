@@ -130,6 +130,15 @@ MENU_CSS = """
 .list .dish { font-weight: 500; }
 .list .meta { display: block; }
 @media (max-width: 700px) { .list { grid-template-columns: 1fr; } .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; } .card-body { flex-direction: column; gap: 4px; } }
+@media (max-width: 900px) {
+  .tabs { position: sticky; top: 60px; z-index: 5; margin: 0 -16px 24px; padding: 10px 16px; scroll-padding-inline: 16px; background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+  .tab { min-height: 44px; }
+  .card .meta { display: block; margin-top: 4px; line-height: 1.4; }
+  .card .dish { line-height: 1.3; }
+  .list { gap: 0; }
+  .list li { padding: 14px 0; border-bottom: 1px solid var(--line); }
+  .list li:first-child { padding-top: 0; }
+}
 """
 
 GAMES_CSS = """
@@ -291,7 +300,15 @@ TABS_JS = """
     panels.forEach(function (p) { p.hidden = p.id !== id; });
   }
   tabs.forEach(function (t, i) {
-    t.addEventListener('click', function () { show(t.dataset.target); });
+    t.addEventListener('click', function () {
+      show(t.dataset.target);
+      var bar = t.parentNode;
+      bar.scrollTo({ left: t.offsetLeft - (bar.clientWidth - t.offsetWidth) / 2, behavior: 'smooth' });
+      if (getComputedStyle(bar).position !== 'sticky') return;
+      var head = document.querySelector('.nav'), panel = document.getElementById(t.dataset.target);
+      var y = panel.getBoundingClientRect().top + window.scrollY - (head ? head.offsetHeight : 0) - bar.offsetHeight - 16;
+      if (window.scrollY > y) window.scrollTo({ top: y, behavior: 'smooth' });
+    });
     t.addEventListener('keydown', function (e) {
       var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
       if (!d) return;
