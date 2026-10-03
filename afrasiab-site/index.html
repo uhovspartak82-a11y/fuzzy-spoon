@@ -368,13 +368,6 @@ figure.review { margin: 0; }
 /* How to get there */
 .route { padding: clamp(56px, 8vw, 104px) var(--gutter); }
 .route-grid { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: clamp(28px, 4vw, 64px); align-items: center; margin-top: 34px; max-width: 1200px; }
-.map-frame { transform: rotate(-.8deg); clip-path: polygon(0 1%, 30% 0, 34% 1.4%, 100% 0, 99.5% 55%, 100% 100%, 8% 99%, 0 100%); }
-.map-frame > .pigment { position: relative; aspect-ratio: 4 / 3; background: var(--plaster); }
-.map-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-.map-fallback { position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; gap: 10px; color: var(--ochre-red-deep); font: 400 1.6rem/1.1 var(--display); }
-.btn-map { appearance: none; border: 0; cursor: pointer; margin-top: 8px; padding: 12px 20px; border-radius: 3px; background: var(--lapis); color: var(--on-lapis); font: 600 1rem/1 var(--body); }
-.btn-map:hover { background: var(--lapis-deep); }
-.map-fallback svg { width: 44px; height: 44px; }
 .route-address { margin: 0; font: 400 clamp(2rem, 3.6vw, 2.8rem)/1.05 var(--display); }
 .route-city { margin: 6px 0 0; color: var(--on-lapis-soft); }
 .route-note { margin: 22px 0 0; max-width: 40ch; }
@@ -407,15 +400,11 @@ figure.shot, figure.facade { margin: 0; }
 .shot-3 { transform: rotate(-.6deg) translateY(12px); clip-path: polygon(0 0, 100% 1%, 99.4% 100%, 0 100%, 0.8% 72%); }
 .facade { transform: rotate(1.2deg); clip-path: polygon(0 1%, 100% 0, 99.5% 46%, 100% 100%, 22% 99.2%, 18% 100%, 0 99.5%); }
 .route-grid { align-items: start; }
-.route .map-frame { margin-top: clamp(28px, 4vw, 48px); max-width: 1200px; transform: rotate(-.4deg); }
-.route .map-frame > .pigment { aspect-ratio: 21 / 7; }
-.map-fallback[hidden] { display: none; }
 @media (max-width: 900px) {
   .inside-wall { grid-template-columns: 1fr 1fr; }
   .shot-1 { grid-column: 1 / -1; }
   .shot-1 img { aspect-ratio: 4 / 3; }
   .shot-2 { transform: rotate(1deg); }
-  .route .map-frame > .pigment { aspect-ratio: 4 / 3; }
 }
 @media (max-width: 520px) {
   .inside-wall { grid-template-columns: 1fr; }
@@ -750,9 +739,6 @@ figure.shot, figure.facade { margin: 0; }
           <figcaption>Вход под вывеской «Восточная кухня», дверь в&nbsp;зелёной арке</figcaption>
         </div></figure>
       </div>
-      <div class="fragment map-frame"><div class="pigment">
-          <div class="map-fallback" data-map-src="https://yandex.ru/map-widget/v1/?text=%D0%90%D1%84%D1%80%D0%B0%D1%81%D0%B8%D0%B0%D0%B1%2C%20%D0%9C%D1%8B%D1%82%D0%BD%D0%B8%D0%BD%D1%81%D0%BA%D0%B0%D1%8F%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%2C%2011%2C%20%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3&amp;z=16"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Мытнинская ул., 11</span><button class="btn-map" type="button">Показать карту</button></div>
-        </div></div>
 
     </section>
   </main>
@@ -791,18 +777,6 @@ document.documentElement.classList.remove('no-js');
       var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
       if (d) { e.preventDefault(); select(tabs[(i + d + tabs.length) % tabs.length], true); }
     });
-  });
-})();
-(function () {
-  var box = document.querySelector('[data-map-src]');
-  if (!box) return;
-  box.querySelector('.btn-map').addEventListener('click', function () {
-    var f = document.createElement('iframe');
-    f.src = box.getAttribute('data-map-src');
-    f.title = 'Карта: кафе «Афрасиаб», Мытнинская улица, 11';
-    f.allowFullscreen = true;
-    box.parentNode.appendChild(f);
-    box.hidden = true;
   });
 })();
 </script>
