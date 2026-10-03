@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ru">
+<html lang="ru" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -258,6 +258,96 @@ a { color: inherit; text-underline-offset: .22em; text-decoration-thickness: 1px
 @media (max-width: 380px) {
   .inscription h1 { font-size: 2.75rem; }
 }
+
+/* Full menu: tabs painted on the wall, list on a plaster fragment */
+.menu { padding: clamp(32px, 4vw, 56px) var(--gutter) clamp(56px, 8vw, 104px); background: linear-gradient(180deg, transparent, rgba(11, 26, 69, .35) 30%, rgba(11, 26, 69, .35) 70%, transparent); }
+.section-title { margin: 0; font: 400 clamp(2.2rem, 4.6vw, 3.6rem)/1.05 var(--display); letter-spacing: .06em; }
+.section-lede { margin: 12px 0 0; max-width: 56ch; color: var(--on-lapis-soft); }
+.tabs {
+  display: flex; flex-wrap: wrap; gap: 10px;
+  margin: 34px 0 30px; padding: 0; 
+}
+.tab {
+  appearance: none; border: 0; cursor: pointer;
+  padding: 10px 16px;
+  font: 500 .98rem/1.1 var(--body);
+  color: var(--on-lapis);
+  background: rgba(243, 234, 214, .08);
+  border-radius: 2px;
+  box-shadow: inset 0 0 0 1px rgba(243, 234, 214, .22);
+  transition: background .2s, color .2s, box-shadow .2s;
+}
+.tab:hover { background: rgba(243, 234, 214, .16); }
+.tab[aria-selected="true"] { background: var(--ochre); color: var(--carbon); box-shadow: 0 4px 10px rgba(6, 14, 40, .35); }
+.board {
+  max-width: 1120px;
+  clip-path: polygon(0 0.6%, 18% 0, 23% 0.8%, 100% 0, 99.6% 34%, 100% 100%, 71% 99.4%, 66% 100%, 0 99.6%, 0.5% 62%);
+}
+.board > .pigment { background: var(--plaster); color: var(--carbon); padding: clamp(24px, 4vw, 52px); }
+.panel h3 { margin: 0 0 22px; font: 400 clamp(1.7rem, 3vw, 2.3rem)/1.1 var(--display); color: var(--ochre-red-deep); }
+.panel[data-hidden] { display: none; }
+.no-js .panel[data-hidden] { display: block; }
+.no-js .panel + .panel { margin-top: 44px; }
+.dishes { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: clamp(28px, 5vw, 72px); }
+.dishes li { padding: 13px 0 14px; border-bottom: 1px solid rgba(28, 19, 16, .14); break-inside: avoid; }
+.dishes .row { display: flex; align-items: baseline; gap: 10px; }
+.dishes h4 { margin: 0; font: 400 1.32rem/1.2 var(--display); }
+.dishes .dots { flex: 1; min-width: 16px; border-bottom: 2px dotted rgba(28, 19, 16, .35); transform: translateY(-4px); }
+.dishes b { font: 600 1.08rem/1 var(--body); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.dishes .meta { display: flex; justify-content: space-between; gap: 16px; margin-top: 4px; font-size: .9rem; color: #5a4334; }
+.dishes .meta p { margin: 0; max-width: 40ch; }
+.dishes .meta span { margin-left: auto; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.menu-note { margin: 22px 0 0; font-size: .92rem; color: var(--on-lapis-soft); }
+
+/* Reviews: fragments of a procession */
+.reviews { padding: clamp(56px, 8vw, 104px) var(--gutter); }
+.rating-line { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; margin: 16px 0 0; color: var(--on-lapis-soft); }
+.rating-line strong { font: 400 2.4rem/1 var(--display); color: var(--on-lapis); }
+.stars { display: inline-flex; gap: 3px; color: var(--ochre); }
+.stars svg { width: 18px; height: 18px; }
+.review-wall { display: grid; align-items: start; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(20px, 3vw, 40px); margin-top: 38px; max-width: 1120px; }
+figure.review { margin: 0; }
+.review > .pigment { padding: clamp(22px, 3vw, 34px); }
+.review blockquote { margin: 14px 0 0; font-size: 1.02rem; line-height: 1.6; }
+.review footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.review cite { font: 400 1.35rem/1.15 var(--display); font-style: normal; }
+.review time { font-size: .88rem; }
+.review:nth-child(1) { transform: rotate(-1deg); clip-path: polygon(0 1%, 100% 0, 99.4% 100%, 40% 99%, 0 100%); }
+.review:nth-child(1) > .pigment { background: var(--plaster); color: var(--carbon); }
+.review:nth-child(2) { transform: rotate(.9deg) translateY(22px); clip-path: polygon(0 0, 61% 1.2%, 100% 0, 100% 98%, 0 100%, 0.6% 52%); }
+.review:nth-child(2) > .pigment { background: var(--ochre-red); color: var(--on-red); }
+.review:nth-child(3) { transform: rotate(.6deg); clip-path: polygon(1% 0, 100% 0.8%, 100% 100%, 0 99%); }
+.review:nth-child(3) > .pigment { background: var(--ochre); color: var(--carbon); }
+.review:nth-child(4) { transform: rotate(-.8deg) translateY(22px); clip-path: polygon(0 0, 100% 1%, 99% 62%, 100% 100%, 12% 99.2%, 0 100%); }
+.review:nth-child(4) > .pigment { background: var(--plaster); color: var(--carbon); }
+.review:nth-child(2) .stars { color: var(--ochre-light); }
+.review:nth-child(3) .stars, .review:nth-child(1) .stars, .review:nth-child(4) .stars { color: var(--ochre-red-deep); }
+.all-reviews { display: inline-flex; align-items: center; gap: 8px; margin-top: 56px; font-weight: 600; color: var(--on-lapis); }
+
+/* Contacts */
+.contacts { background: var(--lapis-night); }
+.contacts-inner { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px clamp(24px, 4vw, 56px); padding: clamp(44px, 6vw, 72px) var(--gutter); }
+.contacts h2 { grid-column: 1 / -1; margin: 0; font: 400 clamp(2rem, 4vw, 3rem)/1.05 var(--display); letter-spacing: .06em; }
+.contacts h3 { margin: 0 0 8px; font: 600 .82rem/1 var(--body); letter-spacing: .08em; text-transform: uppercase; color: var(--ochre); }
+.contacts p { margin: 0; color: var(--on-lapis); font-variant-numeric: tabular-nums; }
+.contacts p + p { margin-top: 6px; }
+.contacts a { text-decoration-color: rgba(243, 234, 214, .4); }
+.contacts a:hover { color: var(--ochre-light); }
+.copyright { padding: 18px var(--gutter) 26px; font-size: .85rem; color: var(--on-lapis-soft); }
+
+@media (max-width: 900px) {
+  .dishes { grid-template-columns: 1fr; }
+  .review-wall { grid-template-columns: 1fr; }
+  .review:nth-child(2), .review:nth-child(4) { transform: rotate(.6deg); }
+  .contacts-inner { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .tabs { flex-wrap: nowrap; overflow-x: auto; margin-inline: calc(var(--gutter) * -1); padding: 4px var(--gutter) 10px; scrollbar-width: none; }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab { flex: none; }
+  .dishes h4 { font-size: 1.2rem; }
+  .contacts-inner { grid-template-columns: 1fr; }
+}
 </style>
 </head>
 <body>
@@ -268,7 +358,8 @@ a { color: inherit; text-underline-offset: .22em; text-decoration-thickness: 1px
       <a class="mark" href="#top">АФРАСИАБ</a>
       <nav class="nav" aria-label="Разделы">
         <a class="nav-link" href="#menu">Меню</a>
-        <a class="nav-link" href="#visit">Как добраться</a>
+        <a class="nav-link" href="#reviews">Отзывы</a>
+        <a class="nav-link" href="#contacts">Контакты</a>
         <a class="nav-phone" href="tel:+79692210555">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h3.5l1.8 4.6-2.3 1.5a12 12 0 0 0 6.9 6.9l1.5-2.3L21 15.5V19a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>
           +7 (969) 221-05-55
@@ -315,8 +406,8 @@ a { color: inherit; text-underline-offset: .22em; text-decoration-thickness: 1px
       </div>
     </section>
 
-    <section class="menu-start" id="menu" aria-labelledby="menu-title">
-      <h2 id="menu-title">Из меню</h2>
+    <section class="menu-start" aria-labelledby="fav-title">
+      <h2 id="fav-title">Что хвалят гости</h2>
       <div class="frieze">
         <article class="fragment dish">
           <div class="pigment">
@@ -357,7 +448,274 @@ a { color: inherit; text-underline-offset: .22em; text-decoration-thickness: 1px
         </article>
       </div>
     </section>
+    <section class="menu" id="menu" aria-labelledby="menu-title">
+      <h2 class="section-title" id="menu-title">Меню</h2>
+      <p class="section-lede">Узбекская, грузинская и турецкая кухня, выпечка и пахлава. Цены и вес как в меню кафе.</p>
+      <div class="tabs" role="tablist" aria-label="Разделы меню">
+<button class="tab" role="tab" type="button" id="tab-cat-1" aria-controls="cat-1" aria-selected="true">Блюда от шеф-повара</button>
+<button class="tab" role="tab" type="button" id="tab-cat-2" aria-controls="cat-2" aria-selected="false">Горячие блюда</button>
+<button class="tab" role="tab" type="button" id="tab-cat-3" aria-controls="cat-3" aria-selected="false">Супы</button>
+<button class="tab" role="tab" type="button" id="tab-cat-4" aria-controls="cat-4" aria-selected="false">Салаты</button>
+<button class="tab" role="tab" type="button" id="tab-cat-5" aria-controls="cat-5" aria-selected="false">Холодные закуски</button>
+<button class="tab" role="tab" type="button" id="tab-cat-6" aria-controls="cat-6" aria-selected="false">Грузия</button>
+<button class="tab" role="tab" type="button" id="tab-cat-7" aria-controls="cat-7" aria-selected="false">Хинкали</button>
+<button class="tab" role="tab" type="button" id="tab-cat-8" aria-controls="cat-8" aria-selected="false">Выпечка</button>
+<button class="tab" role="tab" type="button" id="tab-cat-9" aria-controls="cat-9" aria-selected="false">Турецкая выпечка</button>
+<button class="tab" role="tab" type="button" id="tab-cat-10" aria-controls="cat-10" aria-selected="false">Гарниры</button>
+<button class="tab" role="tab" type="button" id="tab-cat-11" aria-controls="cat-11" aria-selected="false">Соусы</button>
+<button class="tab" role="tab" type="button" id="tab-cat-12" aria-controls="cat-12" aria-selected="false">Десерты</button>
+<button class="tab" role="tab" type="button" id="tab-cat-13" aria-controls="cat-13" aria-selected="false">Напитки</button>
+      </div>
+      <div class="fragment board"><div class="pigment">
+<section class="panel" role="tabpanel" id="cat-1" aria-labelledby="tab-cat-1">
+<h3>Блюда от шеф-повара</h3>
+<ul class="dishes">
+<li><div class="row"><h4>Бефстроганов</h4><span class="dots" aria-hidden="true"></span><b>625&nbsp;₽</b></div><div class="meta"><p>Тушёная говядина, нарезанная соломкой, с картофелем фри</p><span>350 г</span></div></li>
+<li><div class="row"><h4>Восток</h4><span class="dots" aria-hidden="true"></span><b>580&nbsp;₽</b></div><div class="meta"><span>300 г</span></div></li>
+<li><div class="row"><h4>Мясо острое</h4><span class="dots" aria-hidden="true"></span><b>595&nbsp;₽</b></div><div class="meta"><span>320 г</span></div></li>
+<li><div class="row"><h4>Ташкентский плов</h4><span class="dots" aria-hidden="true"></span><b>595&nbsp;₽</b></div><div class="meta"><span>420 г</span></div></li>
+<li><div class="row"><h4>Цыплёнок табака</h4><span class="dots" aria-hidden="true"></span><b>740&nbsp;₽</b></div><div class="meta"><span>350 г</span></div></li>
+</ul>
+</section>
+<section class="panel" role="tabpanel" id="cat-2" aria-labelledby="tab-cat-2" data-hidden>
+<h3>Горячие блюда</h3>
+<ul class="dishes">
+<li><div class="row"><h4>Аджапсандал</h4><span class="dots" aria-hidden="true"></span><b>595&nbsp;₽</b></div><div class="meta"><span>300 г</span></div></li>
+<li><div class="row"><h4>Азербайджанская долма</h4><span class="dots" aria-hidden="true"></span><b>595&nbsp;₽</b></div><div class="meta"><span>350 г</span></div></li>
+<li><div class="row"><h4>Дымлама</h4><span class="dots" aria-hidden="true"></span><b>625&nbsp;₽</b></div><div class="meta"><span>350 г</span></div></li>
+<li><div class="row"><h4>Жареная курица с картофелем</h4><span class="dots" aria-hidden="true"></span><b>615&nbsp;₽</b></div><div class="meta"><span>400 г</span></div></li>
+<li><div class="row"><h4>Жареные пельмени</h4><span class="dots" aria-hidden="true"></span><b>495&nbsp;₽</b></div><div class="meta"><span>300 г</span></div></li>
+<li><div class="row"><h4>Жареный лагман</h4><span class="dots" aria-hidden="true"></span><b>565&nbsp;₽</b></div><div class="meta"><span>400 г</span></div></li>
+<li><div class="row"><h4>Казан-кебаб из баранины</h4><span class="dots" aria-hidden="true"></span><b>770&nbsp;₽</b></div><div class="meta"><span>400 г</span></div></li>
+<li><div class="row"><h4>Казан-кебаб из говядины</h4><span class="dots" aria-hidden="true"></span><b>745&nbsp;₽</b></div><div class="meta"><span>400 г</span></div></li>
+<li><div class="row"><h4>Манты</h4><span class="dots" aria-hidden="true"></span><b>615&nbsp;₽</b></div><div class="meta"><p>5 шт.</p><span>400 г</span></div></li>
+<li><div class="row"><h4>Манты с тыквой</h4><span class="dots" aria-hidden="true"></span><b>545&nbsp;₽</b></div><div class="meta"><span>400 г</span></div></li>
+<li><div class="row"><h4>Пельмени на мацони</h4><span class="dots" aria-hidden="true"></span><b>495&nbsp;₽</b></div><div class="meta"><span>300 г</span></div></li>
+<li><div class="row"><h4>Самаркандский плов</h4><span class="dots" aria-hidden="true"></span><b>560&nbsp;₽</b></div><div class="meta"><span>420 г</span></div></li>
+<li><div class="row"><h4>Хонум</h4><span class="dots" aria-hidden="true"></span><b>560&nbsp;₽</b></div><div class="meta"><p>Нежный говяжий фарш, обёрнутый слоями в домашнее тесто</p><span>400 г</span></div></li>
+</ul>
+</section>
+<section class="panel" role="tabpanel" id="cat-3" aria-labelledby="tab-cat-3" data-hidden>
+<h3>Супы</h3>
+<ul class="dishes">
+<li><div class="row"><h4>Борщ по-русски</h4><span class="dots" aria-hidden="true"></span><b>465&nbsp;₽</b></div><div class="meta"><span>300 г</span></div></li>
+<li><div class="row"><h4>Буглама</h4><span class="dots" aria-hidden="true"></span><b>640&nbsp;₽</b></div><div class="meta"><span>300 г</span></div></li>
+<li><div class="row"><h4>Куза Шурпа из баранины</h4><span class="dots" aria-hidden="true"></span><b>545&nbsp;₽</b></div><div class="meta"><span>300 г</span></div></li>
+<li><div class="row"><h4>Куза Шурпа из говядины</h4><span class="dots" aria-hidden="true"></span><b>515&nbsp;₽</b></div><div class="meta"><span>300 г</span></div></li>
+<li><div class="row"><h4>Куриный суп</h4><span class="dots" aria-hidden="true"></span><b>445&nbsp;₽</b></div><div class="meta"><span>220 г</span></div></li>
+<li><div class="row"><h4>Лагман</h4><span class="dots" aria-hidden="true"></span><b>550&nbsp;₽</b></div><div class="meta"><span>300 г</span></div></li>
+<li><div class="row"><h4>Мастава</h4><span class="dots" aria-hidden="true"></span><b>470&nbsp;₽</b></div><div class="meta"><span>300 г</span></div></li>
+<li><div class="row"><h4>Суп с тефтелями</h4><span class="dots" aria-hidden="true"></span><b>485&nbsp;₽</b></div><div class="meta"><span>300 г</span></div></li>
+<li><div class="row"><h4>Харчо</h4><span class="dots" aria-hidden="true"></span><b>520&nbsp;₽</b></div><div class="meta"><span>300 г</span></div></li>
+<li><div class="row"><h4>Чучвара</h4><span class="dots" aria-hidden="true"></span><b>510&nbsp;₽</b></div><div class="meta"><span>300 г</span></div></li>
+<li><div class="row"><h4>Шурпа из баранины</h4><span class="dots" aria-hidden="true"></span><b>510&nbsp;₽</b></div><div class="meta"><span>300 г</span></div></li>
+<li><div class="row"><h4>Шурпа из говядины</h4><span class="dots" aria-hidden="true"></span><b>480&nbsp;₽</b></div><div class="meta"><span>300 г</span></div></li>
+</ul>
+</section>
+<section class="panel" role="tabpanel" id="cat-4" aria-labelledby="tab-cat-4" data-hidden>
+<h3>Салаты</h3>
+<ul class="dishes">
+<li><div class="row"><h4>Афрасиаб</h4><span class="dots" aria-hidden="true"></span><b>485&nbsp;₽</b></div><div class="meta"><span>220 г</span></div></li>
+<li><div class="row"><h4>Ачик-чучук</h4><span class="dots" aria-hidden="true"></span><b>395&nbsp;₽</b></div><div class="meta"><span>220 г</span></div></li>
+<li><div class="row"><h4>Вече</h4><span class="dots" aria-hidden="true"></span><b>485&nbsp;₽</b></div><div class="meta"><span>220 г</span></div></li>
+<li><div class="row"><h4>Восточная сказка</h4><span class="dots" aria-hidden="true"></span><b>485&nbsp;₽</b></div><div class="meta"><span>220 г</span></div></li>
+<li><div class="row"><h4>Греческий салат</h4><span class="dots" aria-hidden="true"></span><b>465&nbsp;₽</b></div><div class="meta"><span>220 г</span></div></li>
+<li><div class="row"><h4>Капустный салат</h4><span class="dots" aria-hidden="true"></span><b>320&nbsp;₽</b></div><div class="meta"><span>200 г</span></div></li>
+<li><div class="row"><h4>Курица с виноградом</h4><span class="dots" aria-hidden="true"></span><b>465&nbsp;₽</b></div><div class="meta"><span>220 г</span></div></li>
+<li><div class="row"><h4>Морковный салат</h4><span class="dots" aria-hidden="true"></span><b>320&nbsp;₽</b></div><div class="meta"><span>200 г</span></div></li>
+<li><div class="row"><h4>Мужской каприз</h4><span class="dots" aria-hidden="true"></span><b>470&nbsp;₽</b></div><div class="meta"><span>300 г</span></div></li>
+<li><div class="row"><h4>Оливье с говядиной</h4><span class="dots" aria-hidden="true"></span><b>465&nbsp;₽</b></div><div class="meta"><span>220 г</span></div></li>
+<li><div class="row"><h4>Свежий на мацони</h4><span class="dots" aria-hidden="true"></span><b>445&nbsp;₽</b></div><div class="meta"><span>220 г</span></div></li>
+<li><div class="row"><h4>Цезарь с креветками</h4><span class="dots" aria-hidden="true"></span><b>560&nbsp;₽</b></div><div class="meta"><span>220 г</span></div></li>
+<li><div class="row"><h4>Цезарь с курицей</h4><span class="dots" aria-hidden="true"></span><b>495&nbsp;₽</b></div><div class="meta"><span>220 г</span></div></li>
+<li><div class="row"><h4>Шакароб</h4><span class="dots" aria-hidden="true"></span><b>365&nbsp;₽</b></div><div class="meta"><span>220 г</span></div></li>
+<li><div class="row"><h4>Салат с хрустящими баклажанами</h4><span class="dots" aria-hidden="true"></span><b>545&nbsp;₽</b></div><div class="meta"><span>220 г</span></div></li>
+</ul>
+</section>
+<section class="panel" role="tabpanel" id="cat-5" aria-labelledby="tab-cat-5" data-hidden>
+<h3>Холодные закуски</h3>
+<ul class="dishes">
+<li><div class="row"><h4>Домашние соленья</h4><span class="dots" aria-hidden="true"></span><b>520&nbsp;₽</b></div><div class="meta"><span>220 г</span></div></li>
+<li><div class="row"><h4>Капуста фирменная</h4><span class="dots" aria-hidden="true"></span><b>360&nbsp;₽</b></div><div class="meta"><span>200 г</span></div></li>
+<li><div class="row"><h4>Овощная нарезка</h4><span class="dots" aria-hidden="true"></span><b>645&nbsp;₽</b></div><div class="meta"><span>350 г</span></div></li>
+<li><div class="row"><h4>Рулетики из баклажанов</h4><span class="dots" aria-hidden="true"></span><b>585&nbsp;₽</b></div><div class="meta"><span>200 г</span></div></li>
+<li><div class="row"><h4>Селёдка по-русски</h4><span class="dots" aria-hidden="true"></span><b>545&nbsp;₽</b></div><div class="meta"><span>200 г</span></div></li>
+<li><div class="row"><h4>Сырное ассорти</h4><span class="dots" aria-hidden="true"></span><b>725&nbsp;₽</b></div><div class="meta"><span>300 г</span></div></li>
+<li><div class="row"><h4>Чакка</h4><span class="dots" aria-hidden="true"></span><b>285&nbsp;₽</b></div><div class="meta"><span>180 г</span></div></li>
+<li><div class="row"><h4>Язык говяжий с хреном</h4><span class="dots" aria-hidden="true"></span><b>655&nbsp;₽</b></div><div class="meta"><span>220 г</span></div></li>
+</ul>
+</section>
+<section class="panel" role="tabpanel" id="cat-6" aria-labelledby="tab-cat-6" data-hidden>
+<h3>Грузия</h3>
+<ul class="dishes">
+<li><div class="row"><h4>Лобио по-мегрельски</h4><span class="dots" aria-hidden="true"></span><b>545&nbsp;₽</b></div><div class="meta"><span>220 г</span></div></li>
+<li><div class="row"><h4>Оджахури с бараниной</h4><span class="dots" aria-hidden="true"></span><b>730&nbsp;₽</b></div><div class="meta"><span>320 г</span></div></li>
+<li><div class="row"><h4>Оджахури с говядиной</h4><span class="dots" aria-hidden="true"></span><b>670&nbsp;₽</b></div><div class="meta"><span>320 г</span></div></li>
+<li><div class="row"><h4>Оджахури с курицей</h4><span class="dots" aria-hidden="true"></span><b>630&nbsp;₽</b></div><div class="meta"><span>320 г</span></div></li>
+<li><div class="row"><h4>Салат по-грузински</h4><span class="dots" aria-hidden="true"></span><b>415&nbsp;₽</b></div><div class="meta"><span>220 г</span></div></li>
+<li><div class="row"><h4>Хачапури по-аджарски</h4><span class="dots" aria-hidden="true"></span><b>680&nbsp;₽</b></div><div class="meta"><span>300 г</span></div></li>
+<li><div class="row"><h4>Хачапури по-мегрельски</h4><span class="dots" aria-hidden="true"></span><b>750&nbsp;₽</b></div><div class="meta"><span>400 г</span></div></li>
+<li><div class="row"><h4>Хачапури со шпинатом</h4><span class="dots" aria-hidden="true"></span><b>750&nbsp;₽</b></div><div class="meta"><span>400 г</span></div></li>
+<li><div class="row"><h4>Чахохбили</h4><span class="dots" aria-hidden="true"></span><b>540&nbsp;₽</b></div><div class="meta"><span>300 г</span></div></li>
+<li><div class="row"><h4>Чашушули</h4><span class="dots" aria-hidden="true"></span><b>570&nbsp;₽</b></div><div class="meta"><span>300 г</span></div></li>
+</ul>
+</section>
+<section class="panel" role="tabpanel" id="cat-7" aria-labelledby="tab-cat-7" data-hidden>
+<h3>Хинкали</h3>
+<ul class="dishes">
+<li><div class="row"><h4>Хинкали с бараниной</h4><span class="dots" aria-hidden="true"></span><b>440&nbsp;₽</b></div><div class="meta"><span>300 г</span></div></li>
+<li><div class="row"><h4>Хинкали с сыром</h4><span class="dots" aria-hidden="true"></span><b>435&nbsp;₽</b></div><div class="meta"><span>260 г</span></div></li>
+<li><div class="row"><h4>Хинкали с телятиной</h4><span class="dots" aria-hidden="true"></span><b>435&nbsp;₽</b></div><div class="meta"><span>300 г</span></div></li>
+</ul>
+</section>
+<section class="panel" role="tabpanel" id="cat-8" aria-labelledby="tab-cat-8" data-hidden>
+<h3>Выпечка</h3>
+<ul class="dishes">
+<li><div class="row"><h4>Самса Пармуда</h4><span class="dots" aria-hidden="true"></span><b>270&nbsp;₽</b></div><div class="meta"><span>200 г</span></div></li>
+<li><div class="row"><h4>Самса из говядины</h4><span class="dots" aria-hidden="true"></span><b>220&nbsp;₽</b></div><div class="meta"><span>200 г</span></div></li>
+<li><div class="row"><h4>Самса из курицы</h4><span class="dots" aria-hidden="true"></span><b>210&nbsp;₽</b></div><div class="meta"><span>200 г</span></div></li>
+<li><div class="row"><h4>Самса с картошкой</h4><span class="dots" aria-hidden="true"></span><b>195&nbsp;₽</b></div><div class="meta"><span>200 г</span></div></li>
+<li><div class="row"><h4>Самса с корейкой ягнёнка</h4><span class="dots" aria-hidden="true"></span><b>350&nbsp;₽</b></div><div class="meta"><span>250 г</span></div></li>
+<li><div class="row"><h4>Самса с тыквой</h4><span class="dots" aria-hidden="true"></span><b>195&nbsp;₽</b></div><div class="meta"><span>200 г</span></div></li>
+<li><div class="row"><h4>Слоёный фатыр</h4><span class="dots" aria-hidden="true"></span><b>400&nbsp;₽</b></div><div class="meta"><span>500 г</span></div></li>
+<li><div class="row"><h4>Узбекская лепёшка</h4><span class="dots" aria-hidden="true"></span><b>99&nbsp;₽</b></div><div class="meta"><span>350 г</span></div></li>
+<li><div class="row"><h4>Чебурек с говядиной</h4><span class="dots" aria-hidden="true"></span><b>380&nbsp;₽</b></div><div class="meta"><p>Хрустящее тесто с начинкой из сочного говяжьего фарша</p><span>120 г</span></div></li>
+</ul>
+</section>
+<section class="panel" role="tabpanel" id="cat-9" aria-labelledby="tab-cat-9" data-hidden>
+<h3>Турецкая выпечка</h3>
+<ul class="dishes">
+<li><div class="row"><h4>Кутабы с говядиной и бараниной</h4><span class="dots" aria-hidden="true"></span><b>500&nbsp;₽</b></div><div class="meta"><span>240 г</span></div></li>
+<li><div class="row"><h4>Кутабы с сыром и зеленью</h4><span class="dots" aria-hidden="true"></span><b>470&nbsp;₽</b></div><div class="meta"><span>240 г</span></div></li>
+<li><div class="row"><h4>Лахмаджун</h4><span class="dots" aria-hidden="true"></span><b>540&nbsp;₽</b></div><div class="meta"><span>300 г</span></div></li>
+<li><div class="row"><h4>Пиде «Карышык»</h4><span class="dots" aria-hidden="true"></span><b>780&nbsp;₽</b></div><div class="meta"><span>280 г</span></div></li>
+<li><div class="row"><h4>Пиде с курицей</h4><span class="dots" aria-hidden="true"></span><b>730&nbsp;₽</b></div><div class="meta"><span>280 г</span></div></li>
+<li><div class="row"><h4>Пиде с сыром</h4><span class="dots" aria-hidden="true"></span><b>650&nbsp;₽</b></div><div class="meta"><span>280 г</span></div></li>
+</ul>
+</section>
+<section class="panel" role="tabpanel" id="cat-10" aria-labelledby="tab-cat-10" data-hidden>
+<h3>Гарниры</h3>
+<ul class="dishes">
+<li><div class="row"><h4>Картофель по-деревенски</h4><span class="dots" aria-hidden="true"></span><b>270&nbsp;₽</b></div><div class="meta"><span>150 г</span></div></li>
+<li><div class="row"><h4>Картофель фри</h4><span class="dots" aria-hidden="true"></span><b>270&nbsp;₽</b></div><div class="meta"><span>150 г</span></div></li>
+<li><div class="row"><h4>Картофельное пюре</h4><span class="dots" aria-hidden="true"></span><b>270&nbsp;₽</b></div><div class="meta"><p>Пюре из отварного картофеля</p><span>150 г</span></div></li>
+<li><div class="row"><h4>Рис</h4><span class="dots" aria-hidden="true"></span><b>245&nbsp;₽</b></div><div class="meta"><p>Отварной рис</p><span>150 г</span></div></li>
+</ul>
+</section>
+<section class="panel" role="tabpanel" id="cat-11" aria-labelledby="tab-cat-11" data-hidden>
+<h3>Соусы</h3>
+<ul class="dishes">
+<li><div class="row"><h4>Аджика</h4><span class="dots" aria-hidden="true"></span><b>105&nbsp;₽</b></div><div class="meta"><span>50 г</span></div></li>
+<li><div class="row"><h4>Наршараб</h4><span class="dots" aria-hidden="true"></span><b>105&nbsp;₽</b></div><div class="meta"><span>50 г</span></div></li>
+<li><div class="row"><h4>Сацебели</h4><span class="dots" aria-hidden="true"></span><b>105&nbsp;₽</b></div><div class="meta"><span>50 г</span></div></li>
+<li><div class="row"><h4>Сметана</h4><span class="dots" aria-hidden="true"></span><b>105&nbsp;₽</b></div><div class="meta"><span>50 г</span></div></li>
+<li><div class="row"><h4>Сырный</h4><span class="dots" aria-hidden="true"></span><b>105&nbsp;₽</b></div><div class="meta"><span>50 г</span></div></li>
+<li><div class="row"><h4>Тартар</h4><span class="dots" aria-hidden="true"></span><b>105&nbsp;₽</b></div><div class="meta"><span>50 г</span></div></li>
+<li><div class="row"><h4>Чесночный</h4><span class="dots" aria-hidden="true"></span><b>105&nbsp;₽</b></div><div class="meta"><span>50 г</span></div></li>
+<li><div class="row"><h4>Масло оливковое</h4><span class="dots" aria-hidden="true"></span><b>105&nbsp;₽</b></div><div class="meta"><span>50 г</span></div></li>
+<li><div class="row"><h4>Томатный</h4><span class="dots" aria-hidden="true"></span><b>105&nbsp;₽</b></div><div class="meta"><span>50 г</span></div></li>
+</ul>
+</section>
+<section class="panel" role="tabpanel" id="cat-12" aria-labelledby="tab-cat-12" data-hidden>
+<h3>Десерты</h3>
+<ul class="dishes">
+<li><div class="row"><h4>Бакинская пахлава</h4><span class="dots" aria-hidden="true"></span><b>190&nbsp;₽</b></div><div class="meta"><span>70 г</span></div></li>
+<li><div class="row"><h4>Бакинская пахлава с шоколадом</h4><span class="dots" aria-hidden="true"></span><b>190&nbsp;₽</b></div><div class="meta"><span>80 г</span></div></li>
+<li><div class="row"><h4>Классическая турецкая пахлава с фисташками</h4><span class="dots" aria-hidden="true"></span><b>190&nbsp;₽</b></div><div class="meta"><span>80 г</span></div></li>
+<li><div class="row"><h4>Классический ховуч с грецким орехом</h4><span class="dots" aria-hidden="true"></span><b>350&nbsp;₽</b></div><div class="meta"><span>120 г</span></div></li>
+<li><div class="row"><h4>Классический ховуч с фисташками</h4><span class="dots" aria-hidden="true"></span><b>350&nbsp;₽</b></div><div class="meta"><span>120 г</span></div></li>
+<li><div class="row"><h4>Мектуб с фисташкой</h4><span class="dots" aria-hidden="true"></span><b>350&nbsp;₽</b></div><div class="meta"><span>120 г</span></div></li>
+<li><div class="row"><h4>Розочка с фисташкой</h4><span class="dots" aria-hidden="true"></span><b>210&nbsp;₽</b></div><div class="meta"><span>70 г</span></div></li>
+<li><div class="row"><h4>Сливочная пахлава</h4><span class="dots" aria-hidden="true"></span><b>190&nbsp;₽</b></div><div class="meta"><span>70 г</span></div></li>
+</ul>
+</section>
+<section class="panel" role="tabpanel" id="cat-13" aria-labelledby="tab-cat-13" data-hidden>
+<h3>Напитки</h3>
+<ul class="dishes">
+<li><div class="row"><h4>BonAqua</h4><span class="dots" aria-hidden="true"></span><b>150&nbsp;₽</b></div><div class="meta"><span>500 мл</span></div></li>
+<li><div class="row"><h4>Coca-Cola</h4><span class="dots" aria-hidden="true"></span><b>295&nbsp;₽</b></div><div class="meta"><span>1 л</span></div></li>
+<li><div class="row"><h4>Coca-Cola</h4><span class="dots" aria-hidden="true"></span><b>180&nbsp;₽</b></div><div class="meta"><span>330 мл</span></div></li>
+<li><div class="row"><h4>Fanta</h4><span class="dots" aria-hidden="true"></span><b>180&nbsp;₽</b></div><div class="meta"><span>330 мл</span></div></li>
+<li><div class="row"><h4>Айран</h4><span class="dots" aria-hidden="true"></span><b>450&nbsp;₽</b></div><div class="meta"><span>1 л</span></div></li>
+<li><div class="row"><h4>Айран</h4><span class="dots" aria-hidden="true"></span><b>260&nbsp;₽</b></div><div class="meta"><span>500 мл</span></div></li>
+<li><div class="row"><h4>Добрый Апельсин</h4><span class="dots" aria-hidden="true"></span><b>220&nbsp;₽</b></div><div class="meta"><p>Газированный напиток</p><span>500 мл</span></div></li>
+<li><div class="row"><h4>Добрый апельсин</h4><span class="dots" aria-hidden="true"></span><b>295&nbsp;₽</b></div><div class="meta"><span>1 л</span></div></li>
+<li><div class="row"><h4>Морс</h4><span class="dots" aria-hidden="true"></span><b>390&nbsp;₽</b></div><div class="meta"><p>Морс на выбор собственного приготовления</p><span>1 л</span></div></li>
+<li><div class="row"><h4>Морс</h4><span class="dots" aria-hidden="true"></span><b>220&nbsp;₽</b></div><div class="meta"><span>500 мл</span></div></li>
+<li><div class="row"><h4>Натахтари</h4><span class="dots" aria-hidden="true"></span><b>295&nbsp;₽</b></div><div class="meta"><p>Вкусный грузинский лимонад</p><span>500 мл</span></div></li>
+<li><div class="row"><h4>Натахтари Груша</h4><span class="dots" aria-hidden="true"></span><b>295&nbsp;₽</b></div><div class="meta"><span>500 мл</span></div></li>
+<li><div class="row"><h4>Сок Добрый</h4><span class="dots" aria-hidden="true"></span><b>335&nbsp;₽</b></div><div class="meta"><span>1 л</span></div></li>
+</ul>
+</section>
+      </div></div>
+      <p class="menu-note">Меню обновлено 27 сентября. Актуальные цены уточняйте по телефону.</p>
+    </section>
+
+    <section class="reviews" id="reviews" aria-labelledby="reviews-title">
+      <h2 class="section-title" id="reviews-title">Отзывы</h2>
+      <p class="rating-line"><strong>5,0</strong><span class="stars" role="img" aria-label="5 из 5"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.86l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.86l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.86l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.86l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.86l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg></span><span>676 оценок и 530 отзывов на Яндекс Картах</span></p>
+      <div class="review-wall">
+        <figure class="fragment review"><div class="pigment">
+          <footer><cite>Костромина Валентина</cite><time>23 мая</time></footer>
+          <span class="stars" role="img" aria-label="5 из 5"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.86l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.86l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.86l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.86l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.86l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg></span>
+          <blockquote>Замечательный ресторан, уютная атмосфера, очень приветливый персонал, официант Анна просто супер, очень отзывчивая и приятная девушка. Обслуживание на все 100%. Меню большое по очень приемлемым ценам. Все что мы заказали было просто восхитительно,…</blockquote>
+        </div></figure>
+        <figure class="fragment review"><div class="pigment">
+          <footer><cite>Ирина</cite><time>9 мая</time></footer>
+          <span class="stars" role="img" aria-label="5 из 5"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.86l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.86l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.86l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.86l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.86l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg></span>
+          <blockquote>Вкусно поесть можно здесь! Очень вкусный ташкентский плов, изумительная самса. Большой выбор пахлавы. Просторное кафе, ненавязчивая восточная музыка не мешает общаться. Персонал радушный и очень позитивный. Заказ принесли быстро.</blockquote>
+        </div></figure>
+        <figure class="fragment review"><div class="pigment">
+          <footer><cite>Андрей Чернышов</cite><time>11 июля</time></footer>
+          <span class="stars" role="img" aria-label="5 из 5"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.86l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.86l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.86l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.86l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.86l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg></span>
+          <blockquote>Для начала Всем рекомендую брать чай по-азербайджански - для уютного семейного застолья то самое. Брали на компанию плов и жареный лагман - и то и то было очень…</blockquote>
+        </div></figure>
+        <figure class="fragment review"><div class="pigment">
+          <footer><cite>Иришка Коршунова</cite><time>2 мая</time></footer>
+          <span class="stars" role="img" aria-label="5 из 5"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.86l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.86l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.86l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.86l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.8l2.75 5.6 6.15.9-4.45 4.33 1.05 6.12L12 16.86l-5.5 2.9 1.05-6.13L3.1 9.3l6.15-.9z"/></svg></span>
+          <blockquote>Прекрасное место, все очень вкусно, а главное недолго ждать, манты, хинкали, салат вече, хачапури, возвращаемся сюда не первый раз, обслуживание на высоте, очень приятная девушка, все подробно расскажет про каждое блюда, Обязательно рекомендую к посещению!</blockquote>
+        </div></figure>
+      </div>
+      <a class="all-reviews" href="https://yandex.ru/maps/2/saint-petersburg/?text=%D0%90%D1%84%D1%80%D0%B0%D1%81%D0%B8%D0%B0%D0%B1%2C%20%D0%9C%D1%8B%D1%82%D0%BD%D0%B8%D0%BD%D1%81%D0%BA%D0%B0%D1%8F%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%2C%2011" target="_blank" rel="noopener">Читать все отзывы на Яндекс Картах</a>
+    </section>
   </main>
+
+  <footer class="contacts" id="contacts">
+    <div class="pearls" aria-hidden="true"></div>
+    <div class="contacts-inner">
+      <h2>Контакты</h2>
+      <div><h3>Адрес</h3><p>Мытнинская ул., 11</p><p>Санкт-Петербург</p><p><a href="https://yandex.ru/maps/2/saint-petersburg/?text=%D0%90%D1%84%D1%80%D0%B0%D1%81%D0%B8%D0%B0%D0%B1%2C%20%D0%9C%D1%8B%D1%82%D0%BD%D0%B8%D0%BD%D1%81%D0%BA%D0%B0%D1%8F%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%2C%2011" target="_blank" rel="noopener">Построить маршрут</a></p></div>
+      <div><h3>Телефоны</h3><p><a href="tel:+79692210555">+7 (969) 221-05-55</a></p><p><a href="tel:+79214395073">+7 (921) 439-50-73</a></p></div>
+      <div><h3>Время работы</h3><p>Круглосуточно</p><p>Без выходных</p></div>
+      <div><h3>Кухня</h3><p>Узбекская, грузинская, турецкая</p></div>
+    </div>
+    <p class="copyright">Кафе-ресторан «Афрасиаб», Санкт-Петербург</p>
+  </footer>
 </div>
+<script>
+document.documentElement.classList.remove('no-js');
+(function () {
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
+  function select(tab, focus) {
+    tabs.forEach(function (t) {
+      var on = t === tab;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      t.tabIndex = on ? 0 : -1;
+      var panel = document.getElementById(t.getAttribute('aria-controls'));
+      if (on) panel.removeAttribute('data-hidden'); else panel.setAttribute('data-hidden', '');
+    });
+    if (focus) tab.focus();
+    tab.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+  }
+  tabs.forEach(function (t, i) {
+    t.tabIndex = i === 0 ? 0 : -1;
+    t.addEventListener('click', function () { select(t, false); });
+    t.addEventListener('keydown', function (e) {
+      var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      if (d) { e.preventDefault(); select(tabs[(i + d + tabs.length) % tabs.length], true); }
+    });
+  });
+})();
+</script>
 </body>
 </html>
